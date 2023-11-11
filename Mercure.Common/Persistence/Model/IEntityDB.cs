@@ -1,6 +1,6 @@
 ﻿namespace Mercure.Common.Persistence
 {
-    public interface IEntityDB
+    public interface IEntityDB 
     {
         string Identifier { get; }
     }

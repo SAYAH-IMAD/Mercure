@@ -1,5 +1,6 @@
 ﻿using ChangeTracking;
 using Mercure.Common.Domain;
+using Mercure.Common.Extension;
 
 namespace Mercure.Common.Persistence
 {
@@ -20,7 +21,7 @@ namespace Mercure.Common.Persistence
         public void Add(ref TAggregate aggregate)
         {
             TPersistence persistence = _translator.Translate(aggregate);
-            bool status = _transaction.Insert(persistence);
+            _transaction.Insert(persistence);
             
             aggregate = _translator.Translate(persistence);
         }
@@ -49,14 +50,15 @@ namespace Mercure.Common.Persistence
         {
             bool changeSaved = false;
 
-            persistedData.Synchronise(updateData);
-           
-            IChangeTrackable<TPersistence> changeTracking = persistedData.AsTrackable()
-                .CastToIChangeTrackable();
+            TPersistence trackable = persistedData.AsTrackable(ChangeStatus.Unchanged, true, true);
+
+            trackable.Synchronise(updateData);
+
+            IChangeTrackable<TPersistence> changeTracking = trackable.CastToIChangeTrackable();
 
             if (changeTracking.IsChanged)
             {
-                changeSaved = _transaction.Update(persistedData);
+                changeSaved = _transaction.ApplyChanges(trackable, null);
                 changeTracking.AcceptChanges();
             }
 

@@ -23,5 +23,9 @@ namespace Mercure.User.API.Controllers
         public async Task CreateUser(UserCommandModel user) =>
             await Mediator.Send(new CreateUserCommand(user));
 
+        [HttpPost("AssignProfile")]
+        public async Task CreateUser(UserProfileCommandModel user) =>
+            await Mediator.Send(new AssignProfileToUserCommand(user));
+
     }
 }

@@ -1,4 +1,6 @@
-﻿using Mercure.Common;
+﻿using ChangeTracking;
+using Mercure.Common;
+using Mercure.Common.Extension;
 using Mercure.Common.Persistence;
 using Mercure.User.Infrastructure.Persistence.Model;
 
@@ -82,8 +84,8 @@ namespace Mercure.User.Infrastructure.Persistence
 
             _access.Execute<UserModel>(UserQueries.Update, parameters);
 
-            persistence.HistoryStates.ForEach(e => _userStateTransaction.Update(e));
-            persistence.Profiles.ForEach(e => _userProfileTransaction.Update(e));
+            persistence.HistoryStates.ForEach(e => _userStateTransaction.ApplyChanges(e, persistence.Id));
+            persistence.Profiles.ForEach(e => _userProfileTransaction.ApplyChanges(e, persistence.Id));
 
             return true;
         }

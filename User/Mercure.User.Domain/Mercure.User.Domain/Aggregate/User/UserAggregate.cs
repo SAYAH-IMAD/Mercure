@@ -41,6 +41,8 @@ namespace Mercure.User.Domain.Aggregate.User
                 throw new AssignProfileException();
             else
                 Profiles.Add(profile);
+
+            BirthDate  = DateTime.Now;
         }
 
         public void RemoveProfile(UserProfile profile)

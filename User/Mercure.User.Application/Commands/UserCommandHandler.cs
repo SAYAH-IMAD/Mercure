@@ -6,7 +6,7 @@ using Mercure.User.Infrastructure.Persistence;
 namespace Mercure.User.Application.Commands
 {
     internal class UserCommandHandler : IRequestHandler<CreateUserCommand>,
-        IRequestHandler<AddProfileToUserCommand>
+        IRequestHandler<AssignProfileToUserCommand>
     {
         readonly IUserRepository _userRepository;
 
@@ -26,15 +26,12 @@ namespace Mercure.User.Application.Commands
              _userRepository.Save(ref user);
         }
 
-        public async Task Handle(AddProfileToUserCommand request, CancellationToken cancellationToken)
+        public async Task Handle(AssignProfileToUserCommand request, CancellationToken cancellationToken)
         {
             UserAggregate user = _userRepository.GetById(request.UserProfile.UserId);
-            
-            //Profile profile = Profile.Create(request.UserProfile.Title);
-           // user.AddProfile(profile);
+            user.AssignProfile(UserProfile.Create(request.UserProfile.ProfileId, DateTime.Now));
 
             _userRepository.Save(ref user);
-
         }
     }
 }
