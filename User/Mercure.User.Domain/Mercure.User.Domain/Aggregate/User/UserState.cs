@@ -1,7 +1,7 @@
 ﻿using Mercure.Common.Domain;
 using Mercure.User.Domain.Enumerations;
 
-namespace Mercure.User.Domain.Aggregate.User
+namespace Mercure.User.Domain.Aggregate
 {
     public class UserState : IEntity
     {

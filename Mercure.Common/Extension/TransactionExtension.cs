@@ -1,11 +1,12 @@
 ﻿using ChangeTracking;
-using Mercure.Common.Persistence;
+using Mercure.Common.Persistence.Model;
+using Mercure.Common.Persistence.Transactions;
 
 namespace Mercure.Common.Extension
 {
     public static class TransactionExtension
     {
-        public static bool ApplyChanges<TPersistence>(this ITransaction<TPersistence> transaction, TPersistence persistence, long? parentKey) 
+        public static bool ApplyChanges<TPersistence>(this ITransaction<TPersistence> transaction, TPersistence persistence, long? parentKey = null) 
             where TPersistence : IEntityDB
         { 
             if(transaction == null) throw new ArgumentNullException(nameof(transaction));

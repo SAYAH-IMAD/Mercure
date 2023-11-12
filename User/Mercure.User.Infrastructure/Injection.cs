@@ -1,9 +1,9 @@
 ﻿using Mercure.Common;
-using Mercure.Common.Persistence;
-using Mercure.User.Domain.Aggregate.Profile;
-using Mercure.User.Domain.Aggregate.User;
-using Mercure.User.Infrastructure.Persistence;
+using Mercure.Common.Persistence.Transactions;
+using Mercure.Common.Persistence.Translator;
+using Mercure.User.Domain.Aggregate;
 using Mercure.User.Infrastructure.Persistence.Model;
+using Mercure.User.Infrastructure.Persistence.Repository;
 using Mercure.User.Infrastructure.Persistence.Transaction;
 using Mercure.User.Infrastructure.Persistence.Translator;
 using Microsoft.Extensions.DependencyInjection;

@@ -1,7 +1,6 @@
-﻿using Mercure.Common.Persistence;
-using Mercure.User.Infrastructure.Persistence.Model;
+﻿using Mercure.Common.Persistence.Model;
 
-namespace Mercure.User.Infrastructure.Persistence
+namespace Mercure.User.Infrastructure.Persistence.Model
 {
     public class UserModel : EntityDB<UserModel>
     {
@@ -12,8 +11,8 @@ namespace Mercure.User.Infrastructure.Persistence
         public virtual string City { get; set; }
         public virtual string PostalCode { get; set; }
         public virtual DateTime BirthDate { get; set; }
-        public virtual List<UserStateModel> HistoryStates { get; set; }
-        public virtual List<UserProfileModel> Profiles { get; set; }
+        public virtual IList<UserStateModel> HistoryStates { get; set; }
+        public virtual IList<UserProfileModel> Profiles { get; set; }
 
         public override string Identifier => Id.ToString();
 

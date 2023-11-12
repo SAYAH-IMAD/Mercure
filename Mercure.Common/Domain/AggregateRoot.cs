@@ -1,8 +1,8 @@
 ﻿namespace Mercure.Common.Domain
 {
-    public abstract class Aggregate : IAggregate
+    public abstract class AggregateRoot : IAggregateRoot
     {
-        public Aggregate(long? identifier)
+        public AggregateRoot(long? identifier)
         {
             Identifier = identifier;
         }

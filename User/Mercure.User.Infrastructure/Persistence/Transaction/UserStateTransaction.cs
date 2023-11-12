@@ -1,7 +1,9 @@
 ﻿using Mercure.Common;
-using Mercure.Common.Persistence;
+using Mercure.Common.Persistence.Transactions;
+using Mercure.User.Infrastructure.Persistence.Model;
+using Mercure.User.Infrastructure.Persistence.Query;
 
-namespace Mercure.User.Infrastructure.Persistence
+namespace Mercure.User.Infrastructure.Persistence.Transaction
 {
     internal class UserStateTransaction : ITransaction<UserStateModel>
     {
@@ -59,7 +61,7 @@ namespace Mercure.User.Infrastructure.Persistence
             {
                 { "@ID", persistence.Id},
                 { "@CREATION_DATE",persistence.CreationDate},
-                { "@CODE",persistence.Code},
+                { "@CODE",persistence.Code.Code},
                 { "@USER_ID",userId},
             };
 
@@ -70,7 +72,7 @@ namespace Mercure.User.Infrastructure.Persistence
 
         public bool Update(UserStateModel persistence, params object[] parentKeys)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }

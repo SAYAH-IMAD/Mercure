@@ -1,4 +1,4 @@
-﻿namespace Mercure.User.Infrastructure.Persistence
+﻿namespace Mercure.User.Infrastructure.Persistence.Query
 {
     internal class UserStateQueries
     {

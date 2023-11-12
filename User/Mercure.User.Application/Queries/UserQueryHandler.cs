@@ -1,7 +1,8 @@
 ﻿using MediatR;
-using Mercure.User.Domain.Aggregate.User;
+using Mercure.User.Application.Queries.Models;
+using Mercure.User.Domain.Aggregate;
 using Mercure.User.Domain.Exceptions;
-using Mercure.User.Infrastructure.Persistence;
+using Mercure.User.Infrastructure.Persistence.Repository;
 
 namespace Mercure.User.Application.Queries
 {

@@ -1,7 +1,6 @@
-﻿using Mercure.Common.Persistence;
-using Mercure.User.Infrastructure.Persistence.Model;
+﻿using Mercure.Common.Persistence.Model;
 
-namespace Mercure.User.Infrastructure.Persistence
+namespace Mercure.User.Infrastructure.Persistence.Model
 {
     public class ProfileModel : EntityDB<ProfileModel>
     {

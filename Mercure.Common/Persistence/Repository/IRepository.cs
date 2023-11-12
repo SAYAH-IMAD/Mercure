@@ -1,9 +1,9 @@
 ﻿using Mercure.Common.Domain;
 
-namespace Mercure.Common.Persistence
+namespace Mercure.Common.Persistence.Repository
 {
     public interface IRepository<TAggregate>
-        where TAggregate : IAggregate
+        where TAggregate : IAggregateRoot
     {
         TAggregate GetById(long identifier);
         void Add(ref TAggregate aggregate);

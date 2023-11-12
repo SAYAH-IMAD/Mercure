@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "mku1wgOrmHFXNfUILCncw2HORwTA4WkCnz+0K21JTdq2S74cY2RSk98TrL4jGmOj4jb0cLZUv6ox2+O9O0eh9w==",
+  "dgSpecHash": "9lS90xhWrFK7VORwyz88oOTKalF2pvCnPaSL8gFoy329bf+QKxrn2uxAZo4MxG6n+LOEQxiGlbwKraEqs2sEmA==",
   "success": true,
   "projectFilePath": "C:\\Users\\imads\\OneDrive\\Bureau\\Mercure\\Mercure\\User\\Mercure.User.Application\\Mercure.User.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\imads\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\imads\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\imads\\.nuget\\packages\\castle.core\\4.2.1\\castle.core.4.2.1.nupkg.sha512",
-    "C:\\Users\\imads\\.nuget\\packages\\changetracking\\2.2.17\\changetracking.2.2.17.nupkg.sha512",
+    "C:\\Users\\imads\\.nuget\\packages\\changetracking\\2.2.16\\changetracking.2.2.16.nupkg.sha512",
     "C:\\Users\\imads\\.nuget\\packages\\dapper\\2.0.151\\dapper.2.0.151.nupkg.sha512",
     "C:\\Users\\imads\\.nuget\\packages\\mediatr\\12.1.1\\mediatr.12.1.1.nupkg.sha512",
     "C:\\Users\\imads\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",

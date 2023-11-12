@@ -1,7 +1,8 @@
 ﻿using MediatR;
-using Mercure.User.Domain.Aggregate.User;
+using Mercure.User.Domain.Aggregate;
+using Mercure.User.Domain.Enumerations;
 using Mercure.User.Domain.ValueObject;
-using Mercure.User.Infrastructure.Persistence;
+using Mercure.User.Infrastructure.Persistence.Repository;
 
 namespace Mercure.User.Application.Commands
 {
@@ -29,7 +30,9 @@ namespace Mercure.User.Application.Commands
         public async Task Handle(AssignProfileToUserCommand request, CancellationToken cancellationToken)
         {
             UserAggregate user = _userRepository.GetById(request.UserProfile.UserId);
+          
             user.AssignProfile(UserProfile.Create(request.UserProfile.ProfileId, DateTime.Now));
+            user.AssignState(UserStateEnumeration.Active, DateTime.Now);
 
             _userRepository.Save(ref user);
         }

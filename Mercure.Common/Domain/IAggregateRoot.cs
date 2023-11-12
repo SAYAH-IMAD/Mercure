@@ -1,6 +1,6 @@
 ﻿namespace Mercure.Common.Domain
 {
-    public interface IAggregate : IEntity
+    public interface IAggregateRoot : IEntity
     {
     }
 }

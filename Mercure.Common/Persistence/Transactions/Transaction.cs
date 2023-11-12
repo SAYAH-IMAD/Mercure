@@ -1,4 +1,6 @@
-﻿namespace Mercure.Common.Persistence
+﻿using Mercure.Common.Persistence.Model;
+
+namespace Mercure.Common.Persistence.Transactions
 {
     public abstract class Transaction<TPersistence> : ITransaction<TPersistence>
         where TPersistence : EntityDB<TPersistence>

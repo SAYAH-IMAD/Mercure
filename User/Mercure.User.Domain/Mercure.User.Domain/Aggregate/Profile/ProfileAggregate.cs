@@ -1,7 +1,7 @@
 ﻿using Mercure.Common.Domain;
 using Mercure.User.Domain.Enumerations;
 
-namespace Mercure.User.Domain.Aggregate.Profile
+namespace Mercure.User.Domain.Aggregate
 {
     public class ProfileAggregate : IEntity
     {

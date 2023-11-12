@@ -1,4 +1,6 @@
-﻿namespace Mercure.Common.Persistence
+﻿using Mercure.Common.Persistence.Model;
+
+namespace Mercure.Common.Persistence.Transactions
 {
     public interface ITransaction<TPersistence>
         where TPersistence : IEntityDB

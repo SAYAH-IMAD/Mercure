@@ -1,4 +1,4 @@
-﻿namespace Mercure.User.Application.Queries
+﻿namespace Mercure.User.Application.Queries.Models
 {
     public class UserQueryModel
     {

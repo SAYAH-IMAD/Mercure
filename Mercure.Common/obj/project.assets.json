@@ -71,7 +71,7 @@
           }
         }
       },
-      "ChangeTracking/2.2.17": {
+      "ChangeTracking/2.2.16": {
         "type": "package",
         "dependencies": {
           "Castle.Core": "4.2.1",
@@ -2750,14 +2750,14 @@
         "readme.txt"
       ]
     },
-    "ChangeTracking/2.2.17": {
-      "sha512": "ihT8T67n5DFcEADKjlUZVSRHj1S4MK+rUzRJRT5XHAokWzJkY4hlBT7FHvwdGoPvxop62Acy+zlqZA8Va1sbQA==",
+    "ChangeTracking/2.2.16": {
+      "sha512": "jOMWzQmpEjphnzu5fgGE6pZcaYF5E6WztQ6BOovthqMH4EA7TWsrULdQgIw+LbFThrSt9Lnmn4NEph/3SuNkNw==",
       "type": "package",
-      "path": "changetracking/2.2.17",
+      "path": "changetracking/2.2.16",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "changetracking.2.2.17.nupkg.sha512",
+        "changetracking.2.2.16.nupkg.sha512",
         "changetracking.nuspec",
         "lib/net452/ChangeTracking.dll",
         "lib/netstandard2.0/ChangeTracking.dll"
@@ -8068,7 +8068,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "ChangeTracking >= 2.2.17",
+      "ChangeTracking >= 2.2.16",
       "Dapper >= 2.0.151",
       "MediatR >= 12.1.1",
       "Microsoft.AspNetCore.Mvc.Core >= 2.2.5",
@@ -8127,7 +8127,7 @@
         "dependencies": {
           "ChangeTracking": {
             "target": "Package",
-            "version": "[2.2.17, )"
+            "version": "[2.2.16, )"
           },
           "Dapper": {
             "target": "Package",

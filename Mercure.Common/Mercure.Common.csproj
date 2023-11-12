@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ChangeTracking" Version="2.2.17" />
+    <PackageReference Include="ChangeTracking" Version="2.2.16" />
     <PackageReference Include="Dapper" Version="2.0.151" />
     <PackageReference Include="MediatR" Version="12.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />

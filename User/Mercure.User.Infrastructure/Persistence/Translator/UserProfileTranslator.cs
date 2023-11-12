@@ -1,5 +1,5 @@
-﻿using Mercure.Common.Persistence;
-using Mercure.User.Domain.Aggregate.User;
+﻿using Mercure.Common.Persistence.Translator;
+using Mercure.User.Domain.Aggregate;
 using Mercure.User.Infrastructure.Persistence.Model;
 
 namespace Mercure.User.Infrastructure.Persistence.Translator

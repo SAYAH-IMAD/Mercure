@@ -1,4 +1,4 @@
-﻿using Mercure.Common.Persistence;
+﻿using Mercure.Common.Persistence.Transactions;
 using Mercure.User.Infrastructure.Persistence.Model;
 
 namespace Mercure.User.Infrastructure.Persistence.Transaction

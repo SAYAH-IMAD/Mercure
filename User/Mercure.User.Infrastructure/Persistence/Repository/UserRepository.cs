@@ -1,7 +1,10 @@
-﻿using Mercure.Common.Persistence;
-using Mercure.User.Domain.Aggregate.User;
+﻿using Mercure.Common.Persistence.Repository;
+using Mercure.Common.Persistence.Transactions;
+using Mercure.Common.Persistence.Translator;
+using Mercure.User.Domain.Aggregate;
+using Mercure.User.Infrastructure.Persistence.Model;
 
-namespace Mercure.User.Infrastructure.Persistence
+namespace Mercure.User.Infrastructure.Persistence.Repository
 {
     internal class UserRepository : Repository<UserAggregate, UserModel>, IUserRepository
     {

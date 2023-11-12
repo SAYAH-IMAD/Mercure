@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Mercure.User.Application.Queries.Models;
 
 namespace Mercure.User.Application.Queries
 {

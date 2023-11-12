@@ -1,4 +1,4 @@
-﻿using Mercure.Common.Persistence;
+﻿using Mercure.Common.Persistence.Model;
 using Mercure.User.Domain.Enumerations;
 
 namespace Mercure.User.Infrastructure.Persistence.Model

@@ -1,7 +1,7 @@
-﻿using Mercure.Common.Persistence;
-using Mercure.User.Domain.Aggregate.User;
+﻿using Mercure.Common.Persistence.Repository;
+using Mercure.User.Domain.Aggregate;
 
-namespace Mercure.User.Infrastructure.Persistence
+namespace Mercure.User.Infrastructure.Persistence.Repository
 {
     public interface IUserRepository : IRepository<UserAggregate>
     {

@@ -1,4 +1,4 @@
-﻿using Mercure.Common.Persistence;
+﻿using Mercure.Common.Persistence.Model;
 
 namespace Mercure.User.Infrastructure.Persistence.Model
 {

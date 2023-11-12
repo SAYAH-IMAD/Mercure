@@ -1,13 +1,13 @@
-﻿using Mercure.Common.Persistence;
+﻿using Mercure.Common.Persistence.Model;
 using Mercure.User.Domain.Enumerations;
 
-namespace Mercure.User.Infrastructure.Persistence
+namespace Mercure.User.Infrastructure.Persistence.Model
 {
     public class UserStateModel : EntityDB<UserStateModel>
     {
         public virtual long? Id { get; set; }
         public virtual UserStateEnumeration Code { get; set; }
-        public virtual DateTime CreationDate { get;  set; }
+        public virtual DateTime CreationDate { get; set; }
 
         public override string Identifier => Id.ToString();
 

@@ -1,18 +1,19 @@
-﻿using Mercure.User.Domain.Enumerations;
+﻿using Mercure.Common.Domain;
+using Mercure.User.Domain.Enumerations;
 using Mercure.User.Domain.Exceptions;
 using Mercure.User.Domain.ValueObject;
 
-namespace Mercure.User.Domain.Aggregate.User
+namespace Mercure.User.Domain.Aggregate
 {
-    public class UserAggregate : Common.Domain.Aggregate
+    public class UserAggregate : AggregateRoot
     {
         public UserAggregate(long? id,
             string firstName,
             string lastName,
             Address address,
             DateTime birthDate,
-            ICollection<UserState> historyStates,
-            ICollection<UserProfile> profiles) : base(id)
+            List<UserState> historyStates,
+            List<UserProfile> profiles) : base(id)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -42,7 +43,7 @@ namespace Mercure.User.Domain.Aggregate.User
             else
                 Profiles.Add(profile);
 
-            BirthDate  = DateTime.Now;
+            //BirthDate = DateTime.Now;
         }
 
         public void RemoveProfile(UserProfile profile)

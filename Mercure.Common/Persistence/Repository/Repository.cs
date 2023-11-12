@@ -1,11 +1,14 @@
 ﻿using ChangeTracking;
 using Mercure.Common.Domain;
 using Mercure.Common.Extension;
+using Mercure.Common.Persistence.Model;
+using Mercure.Common.Persistence.Transactions;
+using Mercure.Common.Persistence.Translator;
 
-namespace Mercure.Common.Persistence
+namespace Mercure.Common.Persistence.Repository
 {
     public abstract class Repository<TAggregate, TPersistence> : IRepository<TAggregate>
-        where TAggregate : IAggregate
+        where TAggregate : IAggregateRoot
         where TPersistence : EntityDB<TPersistence>
     {
         readonly ITranslator<TAggregate, TPersistence> _translator;
@@ -22,7 +25,7 @@ namespace Mercure.Common.Persistence
         {
             TPersistence persistence = _translator.Translate(aggregate);
             _transaction.Insert(persistence);
-            
+
             aggregate = _translator.Translate(persistence);
         }
 
@@ -30,6 +33,7 @@ namespace Mercure.Common.Persistence
         {
             TAggregate aggregate = default;
             TPersistence persistence = _transaction.GetByIdentifier(identifier);
+
             if (persistence is not null)
                 aggregate = _translator.Translate(persistence);
 
@@ -38,7 +42,7 @@ namespace Mercure.Common.Persistence
 
         public bool Save(ref TAggregate aggregate)
         {
-            TPersistence persistedData =  _transaction.GetByIdentifier(aggregate.Identifier.Value);
+            TPersistence persistedData = _transaction.GetByIdentifier(aggregate.Identifier.Value);
             TPersistence updateData = _translator.Translate(aggregate);
 
             bool changeSaved = SaveChanges(persistedData, updateData);
@@ -46,19 +50,19 @@ namespace Mercure.Common.Persistence
             return changeSaved;
         }
 
-        private bool SaveChanges(TPersistence persistedData, TPersistence updateData)
+        private bool SaveChanges(TPersistence original, TPersistence update)
         {
             bool changeSaved = false;
 
-            TPersistence trackable = persistedData.AsTrackable(ChangeStatus.Unchanged, true, true);
+            TPersistence tracked = original.AsTrackable();
 
-            trackable.Synchronise(updateData);
+            tracked.Synchronise(update);
 
-            IChangeTrackable<TPersistence> changeTracking = trackable.CastToIChangeTrackable();
+            IChangeTrackable<TPersistence> changeTracking = tracked.CastToIChangeTrackable();
 
             if (changeTracking.IsChanged)
             {
-                changeSaved = _transaction.ApplyChanges(trackable, null);
+                changeSaved = _transaction.ApplyChanges(tracked);
                 changeTracking.AcceptChanges();
             }
 

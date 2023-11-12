@@ -1,7 +1,9 @@
 ﻿using Mercure.Common;
-using Mercure.Common.Persistence;
+using Mercure.Common.Persistence.Transactions;
+using Mercure.User.Infrastructure.Persistence.Model;
+using Mercure.User.Infrastructure.Persistence.Query;
 
-namespace Mercure.User.Infrastructure.Persistence
+namespace Mercure.User.Infrastructure.Persistence.Transaction
 {
     public class ProfileTransaction : ITransaction<ProfileModel>
     {

@@ -1,10 +1,11 @@
 ﻿using ChangeTracking;
 using Mercure.Common;
 using Mercure.Common.Extension;
-using Mercure.Common.Persistence;
+using Mercure.Common.Persistence.Transactions;
 using Mercure.User.Infrastructure.Persistence.Model;
+using Mercure.User.Infrastructure.Persistence.Query;
 
-namespace Mercure.User.Infrastructure.Persistence
+namespace Mercure.User.Infrastructure.Persistence.Transaction
 {
     public class UserTransaction : ITransaction<UserModel>
     {
@@ -63,8 +64,15 @@ namespace Mercure.User.Infrastructure.Persistence
 
             _access.Execute<UserModel>(UserQueries.Insert, parameters);
 
-            persistence.HistoryStates.ForEach(e => _userStateTransaction.Insert(e));
-            persistence.Profiles.ForEach(e => _userProfileTransaction.Insert(e));
+            foreach (var historyState in persistence.HistoryStates)
+            {
+                _userStateTransaction.Insert(historyState);
+            }
+
+            foreach (var profile in persistence.Profiles)
+            {
+                _userProfileTransaction.Insert(profile);
+            }
 
             return true;
         }
@@ -84,8 +92,16 @@ namespace Mercure.User.Infrastructure.Persistence
 
             _access.Execute<UserModel>(UserQueries.Update, parameters);
 
-            persistence.HistoryStates.ForEach(e => _userStateTransaction.ApplyChanges(e, persistence.Id));
-            persistence.Profiles.ForEach(e => _userProfileTransaction.ApplyChanges(e, persistence.Id));
+
+            foreach (var historyState in persistence.HistoryStates)
+            {
+                _userStateTransaction.ApplyChanges(historyState, persistence.Id);
+            }
+
+            foreach (var profile in persistence.Profiles)
+            {
+                _userProfileTransaction.ApplyChanges(profile, persistence.Id);
+            }
 
             return true;
         }
