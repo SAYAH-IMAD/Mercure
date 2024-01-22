@@ -23,6 +23,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Mercure.User.DB", "User\Mer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mercure.Common", "Mercure.Common\Mercure.Common.csproj", "{B6E79893-B49B-4A88-ACC4-83995BD2CDAF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mercure.User.Domain.Test", "User\Test\Mercure.User.Domain.Test\Mercure.User.Domain.Test.csproj", "{A3B4BEBF-5787-4661-80FC-0F16AA708FD6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{B6E79893-B49B-4A88-ACC4-83995BD2CDAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6E79893-B49B-4A88-ACC4-83995BD2CDAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6E79893-B49B-4A88-ACC4-83995BD2CDAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3B4BEBF-5787-4661-80FC-0F16AA708FD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3B4BEBF-5787-4661-80FC-0F16AA708FD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3B4BEBF-5787-4661-80FC-0F16AA708FD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3B4BEBF-5787-4661-80FC-0F16AA708FD6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,6 +76,7 @@ Global
 		{22220E69-6AA7-405D-A4B7-86345E353485} = {D51961E3-0FF7-4905-BFBD-3B12F2299E31}
 		{45698F7A-497B-40F1-AA1A-1F01C7A6120D} = {D51961E3-0FF7-4905-BFBD-3B12F2299E31}
 		{74A58064-E239-4058-BED2-80263EE544D5} = {D51961E3-0FF7-4905-BFBD-3B12F2299E31}
+		{A3B4BEBF-5787-4661-80FC-0F16AA708FD6} = {28AD8694-A3D0-4BF3-A3BE-3AE5F8BC7BEE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F96A38EA-AEA6-4C6D-A528-6FC62888EB32}

@@ -42,3 +42,4 @@ C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\Mercure.API\obj\Debug\net7.0\refi
 C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\Mercure.API\obj\Debug\net7.0\Mercure.API.pdb
 C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\Mercure.API\obj\Debug\net7.0\Mercure.API.genruntimeconfig.cache
 C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\Mercure.API\obj\Debug\net7.0\ref\Mercure.API.dll
+C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\Mercure.API\obj\Debug\net7.0\Mercure.API.sourcelink.json
