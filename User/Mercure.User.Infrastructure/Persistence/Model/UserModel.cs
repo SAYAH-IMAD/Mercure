@@ -7,6 +7,8 @@ namespace Mercure.User.Infrastructure.Persistence.Model
         public virtual long? Id { get; set; }
         public virtual string FirstName { get; set; }
         public virtual string LastName { get; set; }
+        public virtual string Email { get; set; }
+        public virtual string Password { get; set; }
         public virtual string Street { get; set; }
         public virtual string City { get; set; }
         public virtual string PostalCode { get; set; }
@@ -21,6 +23,8 @@ namespace Mercure.User.Infrastructure.Persistence.Model
             Id = entity.Id;
             FirstName = entity.FirstName;
             LastName = entity.LastName;
+            Email = entity.Email;
+            Password = entity.Password;
             Street = entity.Street;
             City = entity.City;
             PostalCode = entity.PostalCode;

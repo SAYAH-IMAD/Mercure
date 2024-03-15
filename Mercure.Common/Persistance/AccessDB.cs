@@ -1,7 +1,7 @@
 ﻿using Dapper;
 using Microsoft.Data.SqlClient;
 
-namespace Mercure.Common
+namespace Mercure.Common.Persistance
 {
     public class AccessDB : IAccessDB
     {
@@ -12,7 +12,7 @@ namespace Mercure.Common
             _connection = connection;
         }
 
-        public AccessDB ConfigureMapping() 
+        public AccessDB ConfigureMapping()
         {
             DefaultTypeMap.MatchNamesWithUnderscores = true;
 

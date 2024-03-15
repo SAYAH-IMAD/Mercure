@@ -10,6 +10,8 @@ namespace Mercure.User.Domain.Aggregate
         public UserAggregate(long? id,
             string firstName,
             string lastName,
+            Email email,
+            Password password,
             Address address,
             DateTime birthDate,
             List<UserState> historyStates,
@@ -17,6 +19,8 @@ namespace Mercure.User.Domain.Aggregate
         {
             FirstName = firstName;
             LastName = lastName;
+            Email = email;
+            Password = password;
             Address = address;
             BirthDate = birthDate;
             HistoryStates = historyStates;
@@ -25,6 +29,8 @@ namespace Mercure.User.Domain.Aggregate
 
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
+        public Email Email { get; set; }
+        public Password Password { get; set; }
         public Address Address { get; private set; }
         public DateTime BirthDate { get; private set; }
         public ICollection<UserProfile> Profiles { get; private set; }
@@ -32,9 +38,11 @@ namespace Mercure.User.Domain.Aggregate
 
         public static UserAggregate Create(string firstName,
             string lastName,
+            Email email,
+            Password password,
             Address address,
             DateTime birthDate)
-            => new(null, firstName, lastName, address, birthDate, new List<UserState>(), new List<UserProfile>());
+            => new(null, firstName, lastName,email, password, address, birthDate, new List<UserState>(), new List<UserProfile>());
 
         public void AssignProfile(UserProfile profile)
         {

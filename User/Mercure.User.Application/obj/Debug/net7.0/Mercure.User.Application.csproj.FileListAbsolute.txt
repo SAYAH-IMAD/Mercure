@@ -12,8 +12,9 @@ C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\User\Mercure.User.Application\bin
 C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\User\Mercure.User.Application\bin\Debug\net7.0\Mercure.User.Domain.pdb
 C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\User\Mercure.User.Application\bin\Debug\net7.0\Mercure.User.Infrastructure.pdb
 C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\User\Mercure.User.Application\bin\Debug\net7.0\Mercure.Common.pdb
-C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\User\Mercure.User.Application\obj\Debug\net7.0\Mercure.User.Application.csproj.CopyComplete
 C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\User\Mercure.User.Application\obj\Debug\net7.0\Mercure.User.Application.dll
 C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\User\Mercure.User.Application\obj\Debug\net7.0\refint\Mercure.User.Application.dll
 C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\User\Mercure.User.Application\obj\Debug\net7.0\Mercure.User.Application.pdb
 C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\User\Mercure.User.Application\obj\Debug\net7.0\ref\Mercure.User.Application.dll
+C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\User\Mercure.User.Application\obj\Debug\net7.0\Mercure.User.Application.sourcelink.json
+C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\User\Mercure.User.Application\obj\Debug\net7.0\Mercure..8F183D31.Up2Date

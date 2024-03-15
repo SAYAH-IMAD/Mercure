@@ -12,6 +12,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Configuration.AddJsonFile("configuration.development.json");
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -21,10 +22,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-
 await app.UseOcelot();
 
 app.UseHttpsRedirection();
+
 app.UseAuthorization();
 
 app.MapControllers();

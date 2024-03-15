@@ -15,18 +15,24 @@ namespace Mercure.User.Domain.Test
             //Arrange
             string firstName = "Imad";
             string lastName = "SAYAH";
+            string email = "email";
+            string password = "password";
             Address address = new("King Street", "California", "G1E 0M2");
             DateTime birthDate = new(2024, 01, 01);
             
             //Act
             var user = UserAggregate.Create(firstName, 
                 lastName, 
+                email,
+                password,
                 address, 
                 birthDate);
 
             //Assert
             user.FirstName.Should().Be(firstName);
             user.LastName.Should().Be(lastName);
+            user.Email.Should().Be(email);
+            user.Password.Should().Be(password);
             user.Address.Should().Be(address);    
             user.BirthDate.Should().Be(birthDate);
         }

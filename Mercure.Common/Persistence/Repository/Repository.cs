@@ -11,39 +11,39 @@ namespace Mercure.Common.Persistence.Repository
         where TAggregate : IAggregateRoot
         where TPersistence : EntityDB<TPersistence>
     {
-        readonly ITranslator<TAggregate, TPersistence> _translator;
-        readonly ITransaction<TPersistence> _transaction;
+        public ITranslator<TAggregate, TPersistence> Translator { get; private set; }
+        public ITransaction<TPersistence> Transaction { get; private set; }
 
         public Repository(ITranslator<TAggregate, TPersistence> translator,
             ITransaction<TPersistence> transaction)
         {
-            _translator = translator;
-            _transaction = transaction;
+            Translator = translator;
+            Transaction = transaction;
         }
 
         public void Add(ref TAggregate aggregate)
         {
-            TPersistence persistence = _translator.Translate(aggregate);
-            _transaction.Insert(persistence);
+            TPersistence persistence = Translator.Translate(aggregate);
+            Transaction.Insert(persistence);
 
-            aggregate = _translator.Translate(persistence);
+            aggregate = Translator.Translate(persistence);
         }
 
         public TAggregate GetById(long identifier)
         {
             TAggregate aggregate = default;
-            TPersistence persistence = _transaction.GetByIdentifier(identifier);
+            TPersistence persistence = Transaction.GetByIdentifier(identifier);
 
             if (persistence is not null)
-                aggregate = _translator.Translate(persistence);
+                aggregate = Translator.Translate(persistence);
 
             return aggregate;
         }
 
         public bool Save(ref TAggregate aggregate)
         {
-            TPersistence persistedData = _transaction.GetByIdentifier(aggregate.Identifier.Value);
-            TPersistence updateData = _translator.Translate(aggregate);
+            TPersistence persistedData = Transaction.GetByIdentifier(aggregate.Identifier.Value);
+            TPersistence updateData = Translator.Translate(aggregate);
 
             bool changeSaved = SaveChanges(persistedData, updateData);
 
@@ -62,7 +62,7 @@ namespace Mercure.Common.Persistence.Repository
 
             if (changeTracking.IsChanged)
             {
-                changeSaved = _transaction.ApplyChanges(tracked);
+                changeSaved = Transaction.ApplyChanges(tracked);
                 changeTracking.AcceptChanges();
             }
 

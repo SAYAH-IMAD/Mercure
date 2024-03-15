@@ -1,4 +1,4 @@
-﻿using Mercure.Common;
+﻿using Mercure.Common.Persistance;
 using Mercure.Common.Persistence.Transactions;
 using Mercure.User.Infrastructure.Persistence.Model;
 using Mercure.User.Infrastructure.Persistence.Query;
@@ -13,6 +13,8 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
         {
             _access = accessDB;
         }
+
+        public IAccessDB Access => _access;
 
         public bool Delete(UserStateModel persistence, params object[] parentKeys)
         {

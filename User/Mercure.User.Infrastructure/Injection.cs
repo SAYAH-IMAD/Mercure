@@ -1,4 +1,4 @@
-﻿using Mercure.Common;
+﻿using Mercure.Common.Persistance;
 using Mercure.Common.Persistence.Transactions;
 using Mercure.Common.Persistence.Translator;
 using Mercure.User.Domain.Aggregate;
@@ -6,6 +6,8 @@ using Mercure.User.Infrastructure.Persistence.Model;
 using Mercure.User.Infrastructure.Persistence.Repository;
 using Mercure.User.Infrastructure.Persistence.Transaction;
 using Mercure.User.Infrastructure.Persistence.Translator;
+using Mercure.User.Infrastructure.Security;
+using Mercure.User.Infrastructure.Security.Token;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Mercure.User.Infrastructure
@@ -29,6 +31,9 @@ namespace Mercure.User.Infrastructure
             services.AddSingleton<ITranslator<UserProfile, UserProfileModel>, UserProfileTranslator>();
             services.AddSingleton<ITranslator<ProfileAggregate, ProfileModel>, ProfileTranslator>();
             services.AddSingleton<ITranslator<Role, RoleModel>, RoleTranslator>();
+
+            services.AddSingleton<ILoggerProvider, LoggerProvider>();
+            services.AddSingleton<ITokenProvider, TokenProvider>();
         }
     }
 }

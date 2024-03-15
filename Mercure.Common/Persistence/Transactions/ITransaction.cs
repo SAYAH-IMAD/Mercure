@@ -1,10 +1,13 @@
-﻿using Mercure.Common.Persistence.Model;
+﻿using Mercure.Common.Persistance;
+using Mercure.Common.Persistence.Model;
 
 namespace Mercure.Common.Persistence.Transactions
 {
     public interface ITransaction<TPersistence>
         where TPersistence : IEntityDB
     {
+        public IAccessDB Access { get; }
+
         bool Delete(TPersistence persistence, params object[] parentKeys);
 
         TPersistence GetByIdentifier(long identifier);

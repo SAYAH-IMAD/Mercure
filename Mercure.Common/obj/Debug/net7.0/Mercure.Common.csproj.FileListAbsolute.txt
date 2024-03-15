@@ -10,3 +10,4 @@ C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\Mercure.Common\obj\Debug\net7.0\M
 C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\Mercure.Common\obj\Debug\net7.0\refint\Mercure.Common.dll
 C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\Mercure.Common\obj\Debug\net7.0\Mercure.Common.pdb
 C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\Mercure.Common\obj\Debug\net7.0\ref\Mercure.Common.dll
+C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\Mercure.Common\obj\Debug\net7.0\Mercure.Common.sourcelink.json

@@ -8,6 +8,8 @@
     ".NETCoreApp,Version=v7.0": {
       "Mercure.User.Domain/1.0.0": {
         "dependencies": {
+          "FluentAssertions": "6.12.0",
+          "FluentAssertions.Analyzers": "0.26.0",
           "Mercure.Common": "1.0.0"
         },
         "runtime": {
@@ -88,6 +90,18 @@
           }
         }
       },
+      "FluentAssertions/6.12.0": {
+        "dependencies": {
+          "System.Configuration.ConfigurationManager": "6.0.1"
+        },
+        "runtime": {
+          "lib/net6.0/FluentAssertions.dll": {
+            "assemblyVersion": "6.12.0.0",
+            "fileVersion": "6.12.0.0"
+          }
+        }
+      },
+      "FluentAssertions.Analyzers/0.26.0": {},
       "MediatR/12.1.1": {
         "dependencies": {
           "MediatR.Contracts": "2.0.1",
@@ -1618,6 +1632,20 @@
       "sha512": "sha512-mMcZgx1lim0/i1Ozu+lgnBM4GwNIHpCuxV6BV2ovsEfZAXRAq4jb6RIhxGDcVjtmXMLPpdp85jHPdDjBMMwejw==",
       "path": "dapper/2.0.151",
       "hashPath": "dapper.2.0.151.nupkg.sha512"
+    },
+    "FluentAssertions/6.12.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZXhHT2YwP9lajrwSKbLlFqsmCCvFJMoRSK9t7sImfnCyd0OB3MhgxdoMcVqxbq1iyxD6mD2fiackWmBb7ayiXQ==",
+      "path": "fluentassertions/6.12.0",
+      "hashPath": "fluentassertions.6.12.0.nupkg.sha512"
+    },
+    "FluentAssertions.Analyzers/0.26.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0aviLWrf0l3ctdzslVuomkpHTEQPXY05mYaRdQW66qgGnbLPcSlYD7pqVz8ZJHbiYUuOcHAz7QfQOFlFc0n4ew==",
+      "path": "fluentassertions.analyzers/0.26.0",
+      "hashPath": "fluentassertions.analyzers.0.26.0.nupkg.sha512"
     },
     "MediatR/12.1.1": {
       "type": "package",

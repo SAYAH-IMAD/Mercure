@@ -8,6 +8,7 @@ namespace Mercure.User.Application.Commands
 {
     internal class UserCommandHandler : IRequestHandler<CreateUserCommand>,
         IRequestHandler<AssignProfileToUserCommand>
+
     {
         readonly IUserRepository _userRepository;
 
@@ -20,6 +21,8 @@ namespace Mercure.User.Application.Commands
         {
             UserAggregate user = UserAggregate.Create(request.User.FirstName, 
                 request.User.LastName, 
+                new Email(request.User.Email),
+                new Password(request.User.Password),
                 new Address(request.User.Street, request.User.City, request.User.PostalCode), 
                 request.User.BirthDate);
 
@@ -36,5 +39,6 @@ namespace Mercure.User.Application.Commands
 
             _userRepository.Save(ref user);
         }
+
     }
 }

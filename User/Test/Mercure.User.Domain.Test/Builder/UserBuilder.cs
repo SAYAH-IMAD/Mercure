@@ -8,8 +8,11 @@ namespace Mercure.User.Domain.Test.Builder
     {
         string _firstName;
         string _lastName;
+        string _email;
+        string _password;
         Address _address;
         DateTime _birthDate;
+        List<UserState> _userStatus;
         List<UserProfile> _userProfile;
 
         public UserBuilder WithFirstName(string firstName) 
@@ -22,6 +25,20 @@ namespace Mercure.User.Domain.Test.Builder
         public UserBuilder WithLastName(string lastName) 
         { 
             _lastName = lastName;
+
+            return this;
+        }
+
+        public UserBuilder WithEmail(string email)
+        {
+            _email = email;
+
+            return this;
+        }
+
+        public UserBuilder WithPassword(string password)
+        {
+            _password = password;
 
             return this;
         }
@@ -40,10 +57,17 @@ namespace Mercure.User.Domain.Test.Builder
             return this;
         }
 
-
         public UserAggregate Build()
         {
-            return new UserAggregate(this);
+            return new UserAggregate(null, 
+                _firstName, 
+                _lastName, 
+                _email,
+                _password,
+                _address, 
+                _birthDate, 
+                _userStatus, 
+                _userProfile);
         }
     }
 }

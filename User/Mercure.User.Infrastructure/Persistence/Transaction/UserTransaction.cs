@@ -1,6 +1,6 @@
 ﻿using ChangeTracking;
-using Mercure.Common;
 using Mercure.Common.Extension;
+using Mercure.Common.Persistance;
 using Mercure.Common.Persistence.Transactions;
 using Mercure.User.Infrastructure.Persistence.Model;
 using Mercure.User.Infrastructure.Persistence.Query;
@@ -9,18 +9,20 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
 {
     public class UserTransaction : ITransaction<UserModel>
     {
-        readonly IAccessDB _access;
-        readonly ITransaction<UserStateModel> _userStateTransaction;
-        readonly ITransaction<UserProfileModel> _userProfileTransaction;
+        readonly ITransaction<UserStateModel> UserStateTransaction;
+        readonly ITransaction<UserProfileModel> UserProfileTransaction;
 
         public UserTransaction(IAccessDB access,
             ITransaction<UserStateModel> userStateTransaction,
             ITransaction<UserProfileModel> userProfileTransaction)
         {
-            _access = access;
-            _userStateTransaction = userStateTransaction;
-            _userProfileTransaction = userProfileTransaction;
+            Access = access;
+            UserStateTransaction = userStateTransaction;
+            UserProfileTransaction = userProfileTransaction;
         }
+
+        public IAccessDB Access { get; private set; }
+
 
         public bool Delete(UserModel persistence, params object[] parentKeys)
         {
@@ -34,10 +36,10 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
                 { "@ID", identifier}
             };
 
-            var result = _access.ReadFirst<UserModel>(UserQueries.Get, parameters);
+            var result = Access.ReadFirst<UserModel>(UserQueries.Get, parameters);
 
-            result.HistoryStates = _userStateTransaction.GetByParentKey(result.Id);
-            result.Profiles = _userProfileTransaction.GetByParentKey(result.Id);
+            result.HistoryStates = UserStateTransaction.GetByParentKey(result.Id);
+            result.Profiles = UserProfileTransaction.GetByParentKey(result.Id);
 
             return result;
         }
@@ -49,29 +51,31 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
 
         public bool Insert(UserModel persistence, params object[] parentKeys)
         {
-            persistence.Id = _access.GetSequence("USER_ID");
+            persistence.Id = Access.GetSequence("USER_ID");
 
             Dictionary<string, object> parameters = new()
             {
                 { "@ID", persistence.Id},
                 { "@FIRST_NAME",persistence.FirstName},
                 { "@LAST_NAME",persistence.LastName},
+                { "@EMAIL",persistence.Email},
+                { "@PASSWORD",persistence.Password},
                 { "@STREET",persistence.Street},
                 { "@CITY",persistence.City},
                 { "@POSTAL_CODE",persistence.PostalCode},
                 { "@BIRTH_DATE",persistence.BirthDate},
             };
 
-            _access.Execute<UserModel>(UserQueries.Insert, parameters);
+            Access.Execute<UserModel>(UserQueries.Insert, parameters);
 
             foreach (var historyState in persistence.HistoryStates)
             {
-                _userStateTransaction.Insert(historyState);
+                UserStateTransaction.Insert(historyState);
             }
 
             foreach (var profile in persistence.Profiles)
             {
-                _userProfileTransaction.Insert(profile);
+                UserProfileTransaction.Insert(profile);
             }
 
             return true;
@@ -84,23 +88,25 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
                 { "@ID", persistence.Id},
                 { "@FIRST_NAME",persistence.FirstName},
                 { "@LAST_NAME",persistence.LastName},
+                { "@EMAIL",persistence.Email},
+                { "@PASSWORD",persistence.Password},
                 { "@STREET",persistence.Street},
                 { "@CITY",persistence.City},
                 { "@POSTAL_CODE",persistence.PostalCode},
                 { "@BIRTH_DATE",persistence.BirthDate},
             };
 
-            _access.Execute<UserModel>(UserQueries.Update, parameters);
+            Access.Execute<UserModel>(UserQueries.Update, parameters);
 
 
             foreach (var historyState in persistence.HistoryStates)
             {
-                _userStateTransaction.ApplyChanges(historyState, persistence.Id);
+                UserStateTransaction.ApplyChanges(historyState, persistence.Id);
             }
 
             foreach (var profile in persistence.Profiles)
             {
-                _userProfileTransaction.ApplyChanges(profile, persistence.Id);
+                UserProfileTransaction.ApplyChanges(profile, persistence.Id);
             }
 
             return true;

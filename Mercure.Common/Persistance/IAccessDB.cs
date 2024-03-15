@@ -1,4 +1,4 @@
-﻿namespace Mercure.Common
+﻿namespace Mercure.Common.Persistance
 {
     public interface IAccessDB
     {

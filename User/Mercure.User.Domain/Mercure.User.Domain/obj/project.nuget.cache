@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "54vjefB5ZrJAN9LZgNZ7PKp5Vyw9Rh1bmNH5DajmHrVnPC2FnyT2wvYXSMNEVMjy7t7SPXDBFczfs4ViUle50g==",
+  "dgSpecHash": "DK242sWNlkwcQvlve/SLnPlWKW5QSCvWd10yhxU2G29iuqO3LwjDZq4iigRLQ/N65PfOLxe29oPdAKHJxizJYg==",
   "success": true,
   "projectFilePath": "C:\\Users\\imads\\OneDrive\\Bureau\\Mercure\\Mercure\\User\\Mercure.User.Domain\\Mercure.User.Domain\\Mercure.User.Domain.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,8 @@
     "C:\\Users\\imads\\.nuget\\packages\\castle.core\\4.2.1\\castle.core.4.2.1.nupkg.sha512",
     "C:\\Users\\imads\\.nuget\\packages\\changetracking\\2.2.16\\changetracking.2.2.16.nupkg.sha512",
     "C:\\Users\\imads\\.nuget\\packages\\dapper\\2.0.151\\dapper.2.0.151.nupkg.sha512",
+    "C:\\Users\\imads\\.nuget\\packages\\fluentassertions\\6.12.0\\fluentassertions.6.12.0.nupkg.sha512",
+    "C:\\Users\\imads\\.nuget\\packages\\fluentassertions.analyzers\\0.26.0\\fluentassertions.analyzers.0.26.0.nupkg.sha512",
     "C:\\Users\\imads\\.nuget\\packages\\mediatr\\12.1.1\\mediatr.12.1.1.nupkg.sha512",
     "C:\\Users\\imads\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\imads\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
@@ -153,7 +155,10 @@
     "C:\\Users\\imads\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\imads\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\imads\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\imads\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\imads\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\imads\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.16\\microsoft.windowsdesktop.app.ref.7.0.16.nupkg.sha512",
+    "C:\\Users\\imads\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.16\\microsoft.netcore.app.ref.7.0.16.nupkg.sha512",
+    "C:\\Users\\imads\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.16\\microsoft.aspnetcore.app.ref.7.0.16.nupkg.sha512"
   ],
   "logs": []
 }
