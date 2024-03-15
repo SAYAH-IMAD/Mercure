@@ -1,7 +1,7 @@
 ﻿using Dapper;
 using Microsoft.Data.SqlClient;
 
-namespace Mercure.Common.Persistance
+namespace Mercure.Common.Persistence.DataReader
 {
     public class AccessDB : IAccessDB
     {

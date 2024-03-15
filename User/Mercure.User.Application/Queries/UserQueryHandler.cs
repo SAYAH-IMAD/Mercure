@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using Mercure.Common.Persistance;
+using Mercure.Common.Persistence.DataReader;
 using Mercure.User.Application.Queries.Models;
 using Mercure.User.Application.Queries.SQL;
 

@@ -1,4 +1,4 @@
-﻿namespace Mercure.Common.Persistance
+﻿namespace Mercure.Common.Persistence.DataReader
 {
     public interface IAccessDB
     {

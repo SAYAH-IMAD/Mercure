@@ -1,4 +1,4 @@
-﻿using Mercure.Common.Persistance;
+﻿using Mercure.Common.Persistence.DataReader;
 using Mercure.Common.Persistence.Transactions;
 using Mercure.Common.Persistence.Translator;
 using Mercure.User.Domain.Aggregate;

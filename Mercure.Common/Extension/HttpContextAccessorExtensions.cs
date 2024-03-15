@@ -6,14 +6,14 @@ namespace Mercure.Common.Extension
     {
 
         public static List<string> GetClaims(this IHttpContextAccessor context, string claimType) =>
-        context.HttpContext!.User.Claims
-       .Where(claim => claim.Type == claimType)
-       .Select(claim => claim.Value)
-       .ToList();
+            context.HttpContext!.User.Claims
+            .Where(claim => claim.Type == claimType)
+            .Select(claim => claim.Value)
+            .ToList();
 
         public static string GetClaim(this IHttpContextAccessor context, string claimType) =>
             context.HttpContext!.User.Claims
-                .Single(claim => claim.Type == claimType)
-                .Value;
+            .Single(claim => claim.Type == claimType)
+            .Value;
     }
 }

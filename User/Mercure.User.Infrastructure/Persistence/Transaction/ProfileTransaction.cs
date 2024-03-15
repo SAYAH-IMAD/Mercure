@@ -1,4 +1,4 @@
-﻿using Mercure.Common.Persistance;
+﻿using Mercure.Common.Persistence.DataReader;
 using Mercure.Common.Persistence.Transactions;
 using Mercure.User.Infrastructure.Persistence.Model;
 using Mercure.User.Infrastructure.Persistence.Query;
