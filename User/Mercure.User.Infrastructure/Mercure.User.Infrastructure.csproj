@@ -18,4 +18,8 @@
     <ProjectReference Include="..\Mercure.User.Domain\Mercure.User.Domain\Mercure.User.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Service\" />
+  </ItemGroup>
+
 </Project>
