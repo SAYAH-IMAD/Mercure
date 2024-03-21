@@ -1,12 +1,15 @@
+using FluentAssertions.Common;
+using Mercure.Common.Persistence.DataReader;
 using Mercure.User.Application;
 using Mercure.User.Infrastructure;
+using Mercure.User.Infrastructure.Persistence.Repository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -15,25 +18,17 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure();
 
-builder.Services.AddAuthentication(options =>
+builder.Services.AddAuthentication(options => 
 {
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-}).AddJwtBearer(token =>
+}).AddJwtBearer(JwtBearerDefaults.AuthenticationScheme , options => 
 {
-    token.TokenValidationParameters = new TokenValidationParameters
-    {
-        ValidIssuer = builder.Configuration["Jwt:Issuer"],
-        ValidAudience = builder.Configuration["Jwt:Audience"],
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])),
-        ValidateIssuer = true,
-        ValidateAudience = true,
-        ValidateLifetime = false,
-        ValidateIssuerSigningKey = true
+    options.Authority = "https://localhost:7038/";
+    options.TokenValidationParameters = new TokenValidationParameters() 
+    { 
+        ValidateAudience = false
     };
 });
-
 
 var app = builder.Build();
 

@@ -23,11 +23,12 @@ namespace Mercure.User.API.Controllers
             _token = token;
         }
 
-        [Authorize(Roles ="Adminstrator")]
+        [Authorize]
         [HttpGet("GetUsers")]
         public async Task<IEnumerable<UserQueryModel>> GetUsers() =>
           await Mediator.Send(new GetUsersQuery());
 
+        [Authorize]
         [HttpGet("GetUser")]
         public async Task<UserQueryModel> GetUser(int id) =>
             await Mediator.Send(new GetUserQuery(id));

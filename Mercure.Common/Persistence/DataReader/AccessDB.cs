@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using Microsoft.Data.SqlClient;
+using static Dapper.SqlMapper;
 
 namespace Mercure.Common.Persistence.DataReader
 {
@@ -56,6 +57,17 @@ namespace Mercure.Common.Persistence.DataReader
             using (var connection = new SqlConnection(_connection))
             {
                 return connection.QueryFirstOrDefault<T>(query, parameters);
+            }
+        }
+
+        public T QueryMultiple<T>(string query, Dictionary<string, object> parameters, Func<GridReader,T> converter)
+        {
+            using (var connection = new SqlConnection(_connection))
+            {
+                using (var multiple = connection.QueryMultiple(query, parameters))
+                {
+                    return converter.Invoke(multiple);
+                }
             }
         }
     }
