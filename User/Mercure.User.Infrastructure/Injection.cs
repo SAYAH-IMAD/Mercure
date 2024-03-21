@@ -6,8 +6,6 @@ using Mercure.User.Infrastructure.Persistence.Model;
 using Mercure.User.Infrastructure.Persistence.Repository;
 using Mercure.User.Infrastructure.Persistence.Transaction;
 using Mercure.User.Infrastructure.Persistence.Translator;
-using Mercure.User.Infrastructure.Security;
-using Mercure.User.Infrastructure.Security.Token;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Mercure.User.Infrastructure
@@ -33,7 +31,6 @@ namespace Mercure.User.Infrastructure
             services.AddSingleton<ITranslator<Role, RoleModel>, RoleTranslator>();
 
             services.AddSingleton<ILoggerProvider, LoggerProvider>();
-            services.AddSingleton<ITokenProvider, TokenProvider>();
         }
     }
 }
