@@ -186,6 +186,14 @@
               "target": "Package",
               "version": "[4.2.2, )"
             },
+            "NSwag.AspNetCore": {
+              "target": "Package",
+              "version": "[14.0.4, )"
+            },
+            "NSwag.CodeGeneration.CSharp": {
+              "target": "Package",
+              "version": "[14.0.4, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
