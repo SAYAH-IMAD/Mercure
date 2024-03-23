@@ -27,18 +27,13 @@ namespace Mercure.IdentityServer.Configuration
                      IdentityServerConstants.StandardScopes.Profile,
                      IdentityServerConstants.StandardScopes.Email,
                      IdentityServerConstants.StandardScopes.OfflineAccess,
-                    "api" 
                 },
             }
          ];
 
         public static IEnumerable<ApiScope> ApiScopes =>
-           [
+            [
                new ApiScope()
-               {
-                   Name = "api"
-               },
-             new ApiScope()
                {
                    Name = IdentityServerConstants.StandardScopes.OpenId
                }, new ApiScope()

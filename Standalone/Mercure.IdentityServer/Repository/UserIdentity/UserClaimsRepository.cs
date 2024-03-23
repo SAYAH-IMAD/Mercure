@@ -1,52 +1,69 @@
-﻿using Mercure.Common.Persistence.DataReader;
+﻿using Dapper;
 using Mercure.IdentityServer.Repository.UserIdentity.Model;
-using static Dapper.SqlMapper;
+using Microsoft.Data.SqlClient;
 
 namespace Mercure.IdentityServer.Repository.UserIdentity
 {
     public class UserClaimsRepository : IUserClaimsRepository
     {
-        readonly IAccessDB _access;
-
-        public UserClaimsRepository(IAccessDB access)
-        {
-            _access = access;
-        }
-
         public UserClaims FindBySubjectId(string subjectId)
         {
+            string userQuery = "SELECT U.[ID],CONCAT(U.[FIRST_NAME], '_',U.[LAST_NAME]) AS USERNAME,U.[EMAIL],U.[PASSWORD],U.[BIRTH_DATE],U.[STREET],U.[CITY],U.[POSTAL_CODE] FROM [USER] U  WHERE U.[ID] = @ID;";
+            string rolesQuery = "SELECT [Title] AS Role FROM [UserManagement].[dbo].[PROFILE] P JOIN [UserManagement].[dbo].[USER_PROFILE] UP ON [UP].[PROFILE_ID] = [P].[ID] where UP.[USER_ID] = @ID;";
 
+            UserClaims claims = null;
 
-            string sql = "SELECT U.[ID],CONCAT(U.[FIRST_NAME], '_',U.[LAST_NAME]) AS USERNAME,U.[EMAIL],U.[PASSWORD],U.[BIRTH_DATE],U.[STREET],U.[CITY],U.[POSTAL_CODE] FROM [USER] U  WHERE U.[ID] = @ID;" +
-                         "SELECT[Title] FROM [UserManagement].[dbo].[PROFILE] P JOIN [UserManagement].[dbo].[USER_PROFILE] UP ON [UP].[PROFILE_ID] = [P].[ID] where UP.[USER_ID] = @ID;";
-
-            Func<GridReader, UserClaims> converter = (reader) =>
+            using (var connection = new SqlConnection("Data Source=localhost;Initial Catalog=UserManagement;Integrated Security=True;Encrypt=False"))
             {
-                UserClaims user = reader.ReadFirst<UserClaims>();
-                user.Roles = reader.Read<string>().ToList();
+                claims = connection.QueryFirst<UserClaims>(userQuery, new Dictionary<string, object>()
+                {
+                    {
+                      "@ID", subjectId
+                    }
+                });
+            }
 
-                return user;
+            using (var connection = new SqlConnection("Data Source=localhost;Initial Catalog=UserManagement;Integrated Security=True;Encrypt=False"))
+            {
+                claims.Roles = connection.Query<RoleClaim>(rolesQuery, new Dictionary<string, object>()
+                {
+                    {
+                      "@ID", subjectId
+                    }
+                });
+            }
 
-            };
-            return _access.QueryMultiple<UserClaims>(sql, new Dictionary<string, object>()
-                      {
-                         {
-                           "@ID", subjectId
-                         }
-                      }, converter);
+            return claims;
         }
 
         public UserClaims FindByUsername(string username)
         {
-          
+            string userQuery = "SELECT U.[ID],CONCAT(U.[FIRST_NAME], '_',U.[LAST_NAME]) AS USERNAME,U.[EMAIL],U.[PASSWORD],U.[BIRTH_DATE],U.[STREET],U.[CITY],U.[POSTAL_CODE] FROM [USER] U  WHERE U.[EMAIL] = @EMAIL";
+            string rolesQuery = "SELECT [Title] AS Role FROM [UserManagement].[dbo].[PROFILE] P JOIN [UserManagement].[dbo].[USER_PROFILE] UP ON [UP].[PROFILE_ID] = [P].[ID] where UP.[USER_ID] = @ID;";
 
-            return _access.ReadFirst<UserClaims>("SELECT U.[ID],CONCAT(U.[FIRST_NAME], '_',U.[LAST_NAME]) AS USERNAME,U.[EMAIL],U.[PASSWORD],U.[BIRTH_DATE],U.[STREET],U.[CITY],U.[POSTAL_CODE] FROM [USER] U  WHERE U.[EMAIL] = @EMAIL",
-                     new Dictionary<string, object>()
-                     {
-                         {
-                           "@EMAIL", username
-                         }
-                     });
+            UserClaims claims = null;
+
+            using (var connection = new SqlConnection("Data Source=localhost;Initial Catalog=UserManagement;Integrated Security=True;Encrypt=False"))
+            {
+                claims =  connection.QueryFirstOrDefault<UserClaims>(userQuery, new Dictionary<string, object>()
+                {
+                    {
+                      "@EMAIL", username
+                    }
+                });
+            }
+
+            using (var connection = new SqlConnection("Data Source=localhost;Initial Catalog=UserManagement;Integrated Security=True;Encrypt=False"))
+            {
+                claims.Roles = connection.Query<RoleClaim>(rolesQuery, new Dictionary<string, object>() 
+                {
+                    {
+                      "@ID", claims.Id
+                    }
+                });
+            }
+
+            return claims;
         }
 
         public bool ValidateCredentials(string username, string password)
