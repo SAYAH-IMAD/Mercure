@@ -1,0 +1,26 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/API/User/{Version}/{Url}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7021
+        }
+      ],
+      "UpstreamPathTemplate": "/API/User/{Version}/{Url}"
+    },
+    {
+      "DownstreamPathTemplate": "/API/Product/{Version}/{Url}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7021
+        }
+      ],
+      "UpstreamPathTemplate": "/API/Product/{Version}/{Url}"
+    }
+  ]
+}
