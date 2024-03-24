@@ -18,7 +18,6 @@ namespace Mercure.User.API.Controllers
         {
         }
 
-        [Authorize]
         [HttpGet("GetUsers")]
         public async Task<IEnumerable<UserQueryModel>> GetUsers() =>
           await Mediator.Send(new GetUsersQuery());
@@ -35,6 +34,5 @@ namespace Mercure.User.API.Controllers
         [HttpPost("AssignProfile")]
         public async Task AssignProfile(UserProfileCommandModel user) =>
             await Mediator.Send(new AssignProfileToUserCommand(user));
-
     }
 }

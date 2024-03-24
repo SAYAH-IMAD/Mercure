@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mercure.User.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+51b917907920515740ebb6c2fed3ac5e3687addb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9838250e0194f1d4fad3b807ff814915ba096dab")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mercure.User.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mercure.User.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

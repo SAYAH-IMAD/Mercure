@@ -1,5 +1,4 @@
-﻿using ChangeTracking;
-using Mercure.Common.Extension;
+﻿using Mercure.Common.Extension;
 using Mercure.Common.Persistence.DataReader;
 using Mercure.Common.Persistence.Transactions;
 using Mercure.User.Infrastructure.Persistence.Model;
