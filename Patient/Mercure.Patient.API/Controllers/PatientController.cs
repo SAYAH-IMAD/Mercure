@@ -16,8 +16,7 @@ namespace Mercure.Patient.API.Controllers
         //}
 
         [HttpGet("GetUsers")]
-        public async Task<IEnumerable<UserQueryModel>> GetUsers() =>
-            
+        public async Task<IEnumerable<UserQueryModel>> GetUsers() =>           
             await _proxy.GetUsersAsync();
 
         public PatientController(IMediator mediator, IUserProxy proxy) : base(mediator)
