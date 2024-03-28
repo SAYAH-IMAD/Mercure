@@ -7,11 +7,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.1.1" />
+    <PackageReference Include="Microsoft.Extensions.ApiDescription.Client" Version="7.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="NSwag.ApiDescription.Client" Version="13.18.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\..\Mercure.Common\Mercure.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="OpenAPIs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <OpenApiReference Include="..\..\User\Mercure.User.API\swagger\v1\swagger.json" CodeGenerator="NSwagCSharp" Options="/UseBaseUrl:false /GenerateClientInterfaces:true" ClassName="UserProxy" Link="OpenAPIs\swagger.json" />
   </ItemGroup>
 
 </Project>

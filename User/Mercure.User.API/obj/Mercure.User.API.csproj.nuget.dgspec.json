@@ -172,7 +172,7 @@
           "dependencies": {
             "MediatR": {
               "target": "Package",
-              "version": "[12.1.1, )"
+              "version": "[12.2.0, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -180,13 +180,13 @@
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[7.0.11, )"
+              "version": "[8.0.3, )"
             },
             "Microsoft.Extensions.ApiDescription.Client": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.2, )"
+              "version": "[8.0.3, )"
             },
             "Microsoft.Owin.Security.Jwt": {
               "target": "Package",
@@ -196,7 +196,7 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[13.18.2, )"
+              "version": "[14.0.7, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

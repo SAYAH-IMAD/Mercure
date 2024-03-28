@@ -18,20 +18,20 @@ namespace Mercure.User.API.Controllers
         {
         }
 
-        [HttpGet("GetUsers")]
+        [HttpGet("GetUsers", Name ="GetUsers")]
         public async Task<IEnumerable<UserQueryModel>> GetUsers() =>
           await Mediator.Send(new GetUsersQuery());
 
         [Authorize]
-        [HttpGet("GetUser")]
+        [HttpGet("GetUser", Name = "GetUser")]
         public async Task<UserQueryModel> GetUser(int id) =>
             await Mediator.Send(new GetUserQuery(id));
 
-        [HttpPost("CreateUser")]
+        [HttpPost("CreateUser", Name = "CreateUser")]
         public async Task CreateUser(UserCommandModel user) =>
             await Mediator.Send(new CreateUserCommand(user));
 
-        [HttpPost("AssignProfile")]
+        [HttpPost("AssignProfile", Name = "AssignProfile")]
         public async Task AssignProfile(UserProfileCommandModel user) =>
             await Mediator.Send(new AssignProfileToUserCommand(user));
     }

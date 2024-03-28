@@ -4,18 +4,21 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <BaseOutputPath></BaseOutputPath>
+	<OutputPath>bin\Latest\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MediatR" Version="12.1.1" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.3" />
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.11" />
-    <PackageReference Include="Microsoft.Extensions.ApiDescription.Client" Version="7.0.2">
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.3" />
+    <PackageReference Include="Microsoft.Extensions.ApiDescription.Client" Version="8.0.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.Owin.Security.Jwt" Version="4.2.2" />
-    <PackageReference Include="NSwag.ApiDescription.Client" Version="13.18.2">
+    <PackageReference Include="NSwag.ApiDescription.Client" Version="14.0.7">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -27,4 +30,11 @@
     <ProjectReference Include="..\Mercure.User.Infrastructure\Mercure.User.Infrastructure.csproj" />
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+	  <Exec Command="dotnet tool restore"></Exec>
+	  <Exec Command="dotnet tool install Swashbuckle.AspNetCore.Cli --version 6.5.0"></Exec>
+
+	  <Exec Command="dotnet swagger tofile --output swagger/v1/swagger.json $(OutputPath)$(AssemblyName).dll v1"  EnvironmentVariables="DOTNET_ROLL_FORWARD=LatestMajor" />
+  </Target>
+			
 </Project>
