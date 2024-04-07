@@ -8,30 +8,40 @@ namespace Mercure.Patient.Domain.Aggregate
         private PatientAggregate(long? id,
             string lastName,
             string firstName,
+            Gender gender,
             Address address,
             PhoneNumber phoneNumber,
-            PhoneNumber emergencyPhoneNumber) : base(id)
+            Email email,
+            List<Consultation> consultations) : base(id)
         {
             LastName = lastName;
             FirstName = firstName;
+            Gender = gender;
             Address = address;
             PhoneNumber = phoneNumber;
-            EmergencyPhoneNumber = emergencyPhoneNumber;
+            Email = email;
+            Consultations = consultations;
         }
 
-        /// Personal Information
         public string LastName { get; private set; }
         public string FirstName { get; private set; }
+        public Gender Gender { get; private set; }
         public Address Address { get; private set; }
         public PhoneNumber PhoneNumber { get; private set; }
-        public PhoneNumber EmergencyPhoneNumber { get; private set; }
-
-        /// Medical Information
+        public Email Email { get; private set; }
+        public ICollection<Consultation> Consultations { get; set; }
 
         public static PatientAggregate Create(string lastName,
             string firstName,
+            Gender gender,
             Address address,
             PhoneNumber phoneNumber,
-            PhoneNumber emergencyPhoneNumber) => new(null, lastName, firstName, address, phoneNumber, emergencyPhoneNumber);
+            Email email) => new(null, lastName, firstName, gender, address, phoneNumber, email, new List<Consultation>());
+
+        public void AddConsultation(Consultation consultation) 
+        {
+            if (consultation is not null)
+                Consultations.Add(consultation);
+        }
     }
 }
