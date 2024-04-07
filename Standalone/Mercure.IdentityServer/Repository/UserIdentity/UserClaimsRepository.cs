@@ -8,7 +8,7 @@ namespace Mercure.IdentityServer.Repository.UserIdentity
     {
         public UserClaims FindBySubjectId(string subjectId)
         {
-            string userQuery = "SELECT U.[ID],CONCAT(U.[FIRST_NAME], '_',U.[LAST_NAME]) AS USERNAME,U.[EMAIL],U.[PASSWORD],U.[BIRTH_DATE],U.[STREET],U.[CITY],U.[POSTAL_CODE] FROM [USER] U  WHERE U.[ID] = @ID;";
+            string userQuery = "SELECT U.[ID], U.[EMAIL] AS USERNAME, U.[EMAIL],U.[PASSWORD],U.[BIRTH_DATE],U.[STREET],U.[CITY],U.[POSTAL_CODE] FROM [USER] U  WHERE U.[ID] = @ID;";
             string rolesQuery = "SELECT [Title] AS Role FROM [UserManagement].[dbo].[PROFILE] P JOIN [UserManagement].[dbo].[USER_PROFILE] UP ON [UP].[PROFILE_ID] = [P].[ID] where UP.[USER_ID] = @ID;";
 
             UserClaims claims = null;
@@ -38,7 +38,7 @@ namespace Mercure.IdentityServer.Repository.UserIdentity
 
         public UserClaims FindByUsername(string username)
         {
-            string userQuery = "SELECT U.[ID],CONCAT(U.[FIRST_NAME], '_',U.[LAST_NAME]) AS USERNAME,U.[EMAIL],U.[PASSWORD],U.[BIRTH_DATE],U.[STREET],U.[CITY],U.[POSTAL_CODE] FROM [USER] U  WHERE U.[EMAIL] = @EMAIL";
+            string userQuery = "SELECT U.[ID], U.[EMAIL] AS USERNAME,U.[EMAIL],U.[PASSWORD],U.[BIRTH_DATE],U.[STREET],U.[CITY],U.[POSTAL_CODE] FROM [USER] U  WHERE U.[EMAIL] = @EMAIL";
             string rolesQuery = "SELECT [Title] AS Role FROM [UserManagement].[dbo].[PROFILE] P JOIN [UserManagement].[dbo].[USER_PROFILE] UP ON [UP].[PROFILE_ID] = [P].[ID] where UP.[USER_ID] = @ID;";
 
             UserClaims claims = null;

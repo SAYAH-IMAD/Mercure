@@ -22,11 +22,11 @@ namespace Mercure.IdentityServer.Service.Profile
 
             UserClaims user = _repository.FindBySubjectId(id);
 
-            List<Claim> claims = new()
-            {
+            List<Claim> claims =
+            [
                 new Claim(ClaimTypes.NameIdentifier, user.Id),  
                 new Claim(ClaimTypes.Name, user.UserName),
-            };
+            ];
 
             foreach (string role in user.Roles) 
             {

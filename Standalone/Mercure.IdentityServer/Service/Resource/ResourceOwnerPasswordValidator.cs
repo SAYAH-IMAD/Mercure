@@ -19,7 +19,7 @@ namespace Mercure.IdentityServer.Service.Resource
             if (_repository.ValidateCredentials(context.UserName, context.Password))
             {
                 UserClaims user = _repository.FindByUsername(context.UserName);
-                context.Result = new GrantValidationResult(user.Id, OidcConstants.AuthenticationMethods.Password);
+                context.Result = new(user.Id, "pwd");
             }
 
             return Task.FromResult(0);
