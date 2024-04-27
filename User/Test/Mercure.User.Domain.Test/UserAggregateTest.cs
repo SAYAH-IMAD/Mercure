@@ -1,6 +1,6 @@
 using FluentAssertions;
 using Mercure.Common.Exceptions;
-using Mercure.User.Domain.Aggregate;
+using Mercure.User.Domain.Aggregate.User;
 using Mercure.User.Domain.Test.Builder;
 using Mercure.User.Domain.ValueObject;
 

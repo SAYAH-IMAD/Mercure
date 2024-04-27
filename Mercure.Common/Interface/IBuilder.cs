@@ -1,4 +1,4 @@
-﻿namespace Mercure.Common.Test
+﻿namespace Mercure.Common.Interface
 {
     public interface IBuilder<T>
     {

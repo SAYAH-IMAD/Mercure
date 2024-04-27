@@ -1,5 +1,5 @@
 ﻿using Mercure.Common.Persistence.Repository;
-using Mercure.User.Domain.Aggregate;
+using Mercure.User.Domain.Aggregate.User;
 
 namespace Mercure.User.Infrastructure.Persistence.Repository
 {

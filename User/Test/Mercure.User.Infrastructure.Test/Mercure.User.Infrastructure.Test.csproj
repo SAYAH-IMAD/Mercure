@@ -24,7 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Mercure.User.Domain\Mercure.User.Domain\Mercure.User.Domain.csproj" />
     <ProjectReference Include="..\..\Mercure.User.Infrastructure\Mercure.User.Infrastructure.csproj" />
   </ItemGroup>
 

@@ -1,5 +1,5 @@
-﻿using Mercure.Common.Test;
-using Mercure.User.Domain.Aggregate;
+﻿using Mercure.Common.Interface;
+using Mercure.User.Domain.Aggregate.User;
 using Mercure.User.Domain.ValueObject;
 
 namespace Mercure.User.Domain.Test.Builder

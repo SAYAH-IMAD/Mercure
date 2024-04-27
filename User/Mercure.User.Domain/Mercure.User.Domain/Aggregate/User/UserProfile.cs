@@ -1,6 +1,6 @@
 ﻿using Mercure.Common.Domain;
 
-namespace Mercure.User.Domain.Aggregate
+namespace Mercure.User.Domain.Aggregate.User
 {
     public class UserProfile : IEntity
     {

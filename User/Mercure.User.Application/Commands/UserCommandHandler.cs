@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using Mercure.User.Domain.Aggregate;
+using Mercure.User.Domain.Aggregate.User;
 using Mercure.User.Domain.Enumerations;
 using Mercure.User.Domain.ValueObject;
 using Mercure.User.Infrastructure.Persistence.Repository;

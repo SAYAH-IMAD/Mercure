@@ -1,19 +1,18 @@
 using FluentAssertions;
 using Mercure.Common.Persistence.Transactions;
 using Mercure.Common.Persistence.Translator;
-using Mercure.User.Domain.Aggregate;
+using Mercure.User.Domain.Aggregate.User;
 using Mercure.User.Domain.ValueObject;
 using Mercure.User.Infrastructure.Persistence.Model;
 using Mercure.User.Infrastructure.Persistence.Repository;
 using Moq;
-using System.Collections;
 
 namespace Mercure.User.Infrastructure.Test
 {
     public class UserRepositoryTest
     {
         readonly Mock<ITranslator<UserAggregate, UserModel>> _translatorMock;
-        readonly Mock<ITransaction<UserModel>>  _transactionMock;
+        readonly Mock<ITransaction<UserModel>> _transactionMock;
 
         public UserRepositoryTest()
         {
@@ -60,7 +59,7 @@ namespace Mercure.User.Infrastructure.Test
         public void GetById_Always_ReturnUser()
         {
             //Arrange
-            int id = 1; 
+            int id = 1;
             string firstName = "Imad";
             string lastName = "SAYAH";
             string email = "email";
@@ -82,8 +81,8 @@ namespace Mercure.User.Infrastructure.Test
                 .Returns(It.IsAny<UserAggregate>());
 
             // Act 
-           UserAggregate result = new UserRepository(_translatorMock.Object, _transactionMock.Object)
-            .GetById(id);
+            UserAggregate result = new UserRepository(_translatorMock.Object, _transactionMock.Object)
+             .GetById(id);
 
             // Assert
             result.Should().Be(aggregate);

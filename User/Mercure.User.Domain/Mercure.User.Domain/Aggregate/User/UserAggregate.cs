@@ -3,7 +3,7 @@ using Mercure.User.Domain.Enumerations;
 using Mercure.User.Domain.Exceptions;
 using Mercure.User.Domain.ValueObject;
 
-namespace Mercure.User.Domain.Aggregate
+namespace Mercure.User.Domain.Aggregate.User
 {
     public class UserAggregate : AggregateRoot
     {
@@ -42,7 +42,7 @@ namespace Mercure.User.Domain.Aggregate
             Password password,
             Address address,
             DateTime birthDate)
-            => new(null, firstName, lastName,email, password, address, birthDate, new List<UserState>(), new List<UserProfile>());
+            => new(null, firstName, lastName, email, password, address, birthDate, new List<UserState>(), new List<UserProfile>());
 
         public void AssignProfile(UserProfile profile)
         {
