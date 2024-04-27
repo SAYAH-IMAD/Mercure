@@ -27,6 +27,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Mercure.Common\Mercure.Common.csproj" />
+    <ProjectReference Include="..\Mercure.Patient.Application\Mercure.Patient.Application.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -4,38 +4,7 @@
     "title": "Mercure.Patient.API",
     "version": "v1"
   },
-  "paths": {
-    "/API/Patient/V1/GetPatient": {
-      "get": {
-        "tags": [
-          "Patient"
-        ],
-        "operationId": "GetPatient",
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  },
+  "paths": { },
   "components": {
     "securitySchemes": {
       "Bearer": {

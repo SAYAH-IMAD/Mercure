@@ -1,4 +1,6 @@
 using Mercure.Patient.API;
+using Mercure.Patient.Application;
+using Mercure.Patient.Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -30,13 +32,14 @@ builder.Services.AddSwaggerGen(options =>
         Name = "Authorization",
         Type = SecuritySchemeType.ApiKey
     });
-}); 
+});
 
-builder.Services.AddMediatR(configuration => configuration.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
+builder.Services.AddApplication();
+
+builder.Services.AddInfrastructure();
 
 builder.Services.AddHttpClient<IUserProxy, UserProxy>((provider, client) => { client.BaseAddress = new Uri("https://localhost:7021/"); })
     .AddHeaderPropagation(options => options.Headers.Add("authorization"));
-
 
 builder.Services.AddAuthentication(options =>
 {
