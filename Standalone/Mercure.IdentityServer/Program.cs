@@ -11,7 +11,8 @@ builder.Services.AddControllers();
 
 builder.Services.AddSingleton<IUserClaimsRepository, UserClaimsRepository>();
 
-builder.Services.AddSingleton<IAccessDB>(new AccessDB("Data Source=localhost;Initial Catalog=UserManagement;Integrated Security=True;Encrypt=False")
+string db = builder.Configuration.GetConnectionString("UserConnectionStrings");
+builder.Services.AddSingleton<IAccessDB>(new AccessDB(db)
                 .ConfigureMapping());
 
 // TODO : configuration de l'authentification

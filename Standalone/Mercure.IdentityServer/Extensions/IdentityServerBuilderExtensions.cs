@@ -9,7 +9,9 @@ namespace Mercure.IdentityServer.Extensions
         public static IIdentityServerBuilder AddInMemoryUser(this IIdentityServerBuilder builder)
         {
             builder.Services.AddSingleton<IUserClaimsRepository, UserClaimsRepository>();
+
             builder.AddProfileService<ProfileService>();
+
             builder.AddResourceOwnerValidator<ResourceOwnerPasswordValidator>();
 
             return builder;

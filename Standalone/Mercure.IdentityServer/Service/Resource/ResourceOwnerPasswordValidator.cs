@@ -1,5 +1,4 @@
-﻿using IdentityModel;
-using IdentityServer4.Validation;
+﻿using IdentityServer4.Validation;
 using Mercure.IdentityServer.Repository.UserIdentity;
 using Mercure.IdentityServer.Repository.UserIdentity.Model;
 
