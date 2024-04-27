@@ -15,5 +15,10 @@ namespace Mercure.Patient.API.Controllers
         {
             _proxy = proxy;
         }
+
+        [Authorize]
+        [HttpGet("GetUsers", Name = "GetUsers")]
+        public async Task<string> GetUsers() =>
+       "await Mediator.Send(new GetUsersQuery())";
     }
 }

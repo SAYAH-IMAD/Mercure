@@ -1,3 +1,4 @@
+using Mercure.Common.Extension;
 using Mercure.Patient.API;
 using Mercure.Patient.Application;
 using Mercure.Patient.Infrastructure;
@@ -15,7 +16,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
-builder.Services.AddHeaderPropagation(options => options.Headers.Add("authorization"));
+builder.Services.AddAuthorizatinHeaderPropagation();
 
 builder.Services.AddSwaggerGen(options =>
 {
@@ -38,8 +39,8 @@ builder.Services.AddApplication();
 
 builder.Services.AddInfrastructure();
 
-builder.Services.AddHttpClient<IUserProxy, UserProxy>((provider, client) => { client.BaseAddress = new Uri("https://localhost:7021/"); })
-    .AddHeaderPropagation(options => options.Headers.Add("authorization"));
+builder.Services.AddHttpClient<IUserProxy, UserProxy>((configuration) => { configuration.BaseAddress = new Uri("https://localhost:7021/"); })
+                .AddAuthorizatinHeaderPropagation();
 
 builder.Services.AddAuthentication(options =>
 {
