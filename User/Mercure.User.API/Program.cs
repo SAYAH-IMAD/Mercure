@@ -1,3 +1,4 @@
+using Mercure.User.API;
 using Mercure.User.Application;
 using Mercure.User.Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -9,8 +10,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+
+builder.Services.AddHeaderPropagation(options => options.Headers.Add("authorization"));
+
+
 builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new OpenApiInfo 
@@ -29,7 +35,11 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 builder.Services.AddApplication();
+
 builder.Services.AddInfrastructure();
+
+builder.Services.AddHttpClient<IPatientProxy, PatientProxy>((provider, client) => { client.BaseAddress = new Uri("https://localhost:7021/"); })
+    .AddHeaderPropagation(options => options.Headers.Add("authorization"));
 
 builder.Services.AddAuthentication(options => 
 {
@@ -51,6 +61,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseHeaderPropagation();
 
 app.UseHttpsRedirection();
 

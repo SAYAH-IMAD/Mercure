@@ -17,7 +17,7 @@
     <Import Project="$(NuGetPackageRoot)microsoft.extensions.apidescription.server\6.0.5\build\Microsoft.Extensions.ApiDescription.Server.props" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.apidescription.server\6.0.5\build\Microsoft.Extensions.ApiDescription.Server.props')" />
     <Import Project="$(NuGetPackageRoot)swashbuckle.aspnetcore\6.5.0\build\Swashbuckle.AspNetCore.props" Condition="Exists('$(NuGetPackageRoot)swashbuckle.aspnetcore\6.5.0\build\Swashbuckle.AspNetCore.props')" />
     <Import Project="$(NuGetPackageRoot)nswag.msbuild\14.0.7\buildTransitive\NSwag.MSBuild.props" Condition="Exists('$(NuGetPackageRoot)nswag.msbuild\14.0.7\buildTransitive\NSwag.MSBuild.props')" />
-    <Import Project="$(NuGetPackageRoot)microsoft.extensions.apidescription.client\8.0.3\build\Microsoft.Extensions.ApiDescription.Client.props" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.apidescription.client\8.0.3\build\Microsoft.Extensions.ApiDescription.Client.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.extensions.apidescription.client\8.0.4\build\Microsoft.Extensions.ApiDescription.Client.props" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.apidescription.client\8.0.4\build\Microsoft.Extensions.ApiDescription.Client.props')" />
     <Import Project="$(NuGetPackageRoot)nswag.apidescription.client\14.0.7\build\NSwag.ApiDescription.Client.props" Condition="Exists('$(NuGetPackageRoot)nswag.apidescription.client\14.0.7\build\NSwag.ApiDescription.Client.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">

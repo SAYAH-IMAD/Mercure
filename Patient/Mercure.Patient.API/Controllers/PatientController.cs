@@ -10,18 +10,15 @@ namespace Mercure.Patient.API.Controllers
     {
         readonly IUserProxy _proxy;
 
-        //public PatientController(IMediator mediator) : base(mediator)
-        //{
-        //    _proxy = new UserProxy("https://localhost:7021/", new HttpClient());
-        //}
-
-        [HttpGet("GetUsers")]
-        public async Task<IEnumerable<UserQueryModel>> GetUsers() =>           
-            await _proxy.GetUsersAsync();
-
         public PatientController(IMediator mediator, IUserProxy proxy) : base(mediator)
         {
             _proxy = proxy;
+        }
+
+        [HttpGet("GetPatient", Name = "GetPatient")]
+        public string Test() 
+        {
+            return "hello";
         }
     }
 }

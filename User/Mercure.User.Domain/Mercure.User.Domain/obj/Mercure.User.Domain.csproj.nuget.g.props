@@ -15,6 +15,6 @@
   </ItemGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\Users\imads\.nuget\packages\newtonsoft.json\9.0.1</PkgNewtonsoft_Json>
-    <PkgFluentAssertions_Analyzers Condition=" '$(PkgFluentAssertions_Analyzers)' == '' ">C:\Users\imads\.nuget\packages\fluentassertions.analyzers\0.26.0</PkgFluentAssertions_Analyzers>
+    <PkgFluentAssertions_Analyzers Condition=" '$(PkgFluentAssertions_Analyzers)' == '' ">C:\Users\imads\.nuget\packages\fluentassertions.analyzers\0.31.0</PkgFluentAssertions_Analyzers>
   </PropertyGroup>
 </Project>

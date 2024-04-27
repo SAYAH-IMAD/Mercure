@@ -52,15 +52,15 @@
           "dependencies": {
             "ChangeTracking": {
               "target": "Package",
-              "version": "[2.2.16, )"
+              "version": "[2.2.17, )"
             },
             "Dapper": {
               "target": "Package",
-              "version": "[2.0.151, )"
+              "version": "[2.1.35, )"
             },
             "MediatR": {
               "target": "Package",
-              "version": "[12.1.1, )"
+              "version": "[12.2.0, )"
             },
             "Microsoft.AspNetCore.Mvc.Core": {
               "target": "Package",
@@ -68,11 +68,11 @@
             },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
-              "version": "[5.1.1, )"
+              "version": "[5.2.0, )"
             },
             "Microsoft.Extensions.Configuration.Abstractions": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[8.0.0, )"
             },
             "System.ComponentModel": {
               "target": "Package",
@@ -168,7 +168,7 @@
           "dependencies": {
             "MediatR": {
               "target": "Package",
-              "version": "[12.1.1, )"
+              "version": "[12.2.0, )"
             }
           },
           "imports": [
@@ -263,7 +263,7 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[0.26.0, )"
+              "version": "[0.31.0, )"
             }
           },
           "imports": [
@@ -355,11 +355,11 @@
           "dependencies": {
             "ChangeTracking": {
               "target": "Package",
-              "version": "[2.2.16, )"
+              "version": "[2.2.17, )"
             },
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[8.0.1, )"
             },
             "Serilog": {
               "target": "Package",

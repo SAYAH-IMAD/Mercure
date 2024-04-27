@@ -13,15 +13,17 @@ namespace Mercure.User.API.Controllers
     [Route("API/User/V1")]
     public class UserController : ControllerBasic
     {
+        readonly IPatientProxy _proxy;
+
         public UserController(IMediator mediator)
             : base(mediator)
         {
         }
 
         [Authorize]
-        [HttpGet("GetUsers", Name ="GetUsers")]
+        [HttpGet("GetUsers", Name = "GetUsers")]
         public async Task<IEnumerable<UserQueryModel>> GetUsers() =>
-          await Mediator.Send(new GetUsersQuery());
+            await Mediator.Send(new GetUsersQuery());
 
         [Authorize]
         [HttpGet("GetUser", Name = "GetUser")]
