@@ -18,6 +18,7 @@ namespace Mercure.User.API.Controllers
         {
         }
 
+        [Authorize]
         [HttpGet("GetUsers", Name ="GetUsers")]
         public async Task<IEnumerable<UserQueryModel>> GetUsers() =>
           await Mediator.Send(new GetUsersQuery());
