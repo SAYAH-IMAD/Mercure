@@ -12,8 +12,8 @@ namespace Mercure.User.Domain.Test.Builder
         string _password;
         Address _address;
         DateTime _birthDate;
-        List<UserState> _userStatus;
-        List<UserProfile> _userProfile;
+        List<UserState> _userStatus = new();
+        List<UserProfile> _userProfile = new();
 
         public UserBuilder WithFirstName(string firstName) 
         { 
@@ -53,6 +53,13 @@ namespace Mercure.User.Domain.Test.Builder
         public UserBuilder WithBirthDate(DateTime birthDate) 
         {
             _birthDate = birthDate;
+
+            return this;
+        }
+
+        public UserBuilder WithProfiles(List<UserProfile> userProfile)
+        {
+            _userProfile = userProfile;
 
             return this;
         }

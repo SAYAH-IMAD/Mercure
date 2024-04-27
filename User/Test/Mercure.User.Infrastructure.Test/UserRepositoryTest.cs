@@ -74,11 +74,13 @@ namespace Mercure.User.Infrastructure.Test
                 address,
                 birthDate);
 
-            _translatorMock.Setup(e => e.Translate(It.IsAny<UserAggregate>()))
-                .Returns(It.IsAny<UserModel>());
+            UserModel model = new UserModel();
 
-            _translatorMock.Setup(e => e.Translate(It.IsAny<UserModel>()))
-                .Returns(It.IsAny<UserAggregate>());
+            _transactionMock.Setup(e => e.GetByIdentifier(id))
+                .Returns(model);
+
+            _translatorMock.Setup(e => e.Translate(model))
+                .Returns(aggregate);
 
             // Act 
             UserAggregate result = new UserRepository(_translatorMock.Object, _transactionMock.Object)

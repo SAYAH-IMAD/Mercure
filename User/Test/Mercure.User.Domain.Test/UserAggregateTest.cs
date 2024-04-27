@@ -31,8 +31,8 @@ namespace Mercure.User.Domain.Test
             //Assert
             user.FirstName.Should().Be(firstName);
             user.LastName.Should().Be(lastName);
-            user.Email.Should().Be(email);
-            user.Password.Should().Be(password);
+            user.Email.Value.Should().Be(email);
+            user.Password.Value.Should().Be(password);
             user.Address.Should().Be(address);    
             user.BirthDate.Should().Be(birthDate);
         }
@@ -77,6 +77,7 @@ namespace Mercure.User.Domain.Test
                  .WithLastName("SAYAH")
                  .WithAddress(new("King Street", "California", "G1E 0M2"))
                  .WithBirthDate(new(2024, 01, 01))
+                 .WithProfiles([profile])
                  .Build();
 
             //Act
