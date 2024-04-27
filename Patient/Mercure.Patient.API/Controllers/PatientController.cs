@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Mercure.Common;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Mercure.Patient.API.Controllers
@@ -13,12 +14,6 @@ namespace Mercure.Patient.API.Controllers
         public PatientController(IMediator mediator, IUserProxy proxy) : base(mediator)
         {
             _proxy = proxy;
-        }
-
-        [HttpGet("GetPatient", Name = "GetPatient")]
-        public string Test() 
-        {
-            return "hello";
         }
     }
 }

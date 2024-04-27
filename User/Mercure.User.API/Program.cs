@@ -19,8 +19,8 @@ builder.Services.AddHeaderPropagation(options => options.Headers.Add("authorizat
 
 builder.Services.AddSwaggerGen(options =>
 {
-    options.SwaggerDoc("v1", new OpenApiInfo 
-    { 
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
         Title = $"{Assembly.GetAssembly(typeof(Program)).GetName().Name}",
         Version = "v1"
     });
@@ -41,14 +41,15 @@ builder.Services.AddInfrastructure();
 builder.Services.AddHttpClient<IPatientProxy, PatientProxy>((provider, client) => { client.BaseAddress = new Uri("https://localhost:7021/"); })
     .AddHeaderPropagation(options => options.Headers.Add("authorization"));
 
-builder.Services.AddAuthentication(options => 
+builder.Services.AddAuthentication(options =>
 {
     options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-}).AddJwtBearer(JwtBearerDefaults.AuthenticationScheme , options => 
+})
+    .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
 {
     options.Authority = "https://localhost:7038/";
-    options.TokenValidationParameters = new TokenValidationParameters() 
-    { 
+    options.TokenValidationParameters = new TokenValidationParameters()
+    {
         ValidateAudience = false
     };
 });

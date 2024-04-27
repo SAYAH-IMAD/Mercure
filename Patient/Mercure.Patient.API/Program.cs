@@ -1,4 +1,6 @@
 using Mercure.Patient.API;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 
@@ -35,6 +37,20 @@ builder.Services.AddMediatR(configuration => configuration.RegisterServicesFromA
 builder.Services.AddHttpClient<IUserProxy, UserProxy>((provider, client) => { client.BaseAddress = new Uri("https://localhost:7021/"); })
     .AddHeaderPropagation(options => options.Headers.Add("authorization"));
 
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+    .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
+    {
+        options.Authority = "https://localhost:7038/";
+        options.TokenValidationParameters = new TokenValidationParameters()
+        {
+            ValidateAudience = false
+        };
+    });
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -47,6 +63,8 @@ if (app.Environment.IsDevelopment())
 app.UseHeaderPropagation();
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
