@@ -138,9 +138,6 @@
             "projectReferences": {
               "C:\\Users\\imads\\OneDrive\\Bureau\\Mercure\\Mercure\\User\\Mercure.User.Application\\Mercure.User.Application.csproj": {
                 "projectPath": "C:\\Users\\imads\\OneDrive\\Bureau\\Mercure\\Mercure\\User\\Mercure.User.Application\\Mercure.User.Application.csproj"
-              },
-              "C:\\Users\\imads\\OneDrive\\Bureau\\Mercure\\Mercure\\User\\Mercure.User.Infrastructure\\Mercure.User.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\imads\\OneDrive\\Bureau\\Mercure\\Mercure\\User\\Mercure.User.Infrastructure\\Mercure.User.Infrastructure.csproj"
               }
             }
           }
@@ -192,9 +189,17 @@
               "target": "Package",
               "version": "[14.0.7, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
+            },
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.3.4, )"
             }
           },
           "imports": [

@@ -1,3 +1,4 @@
+using Mercure.Common.Configuration;
 using Mercure.Common.Extension;
 using Mercure.Patient.API;
 using Mercure.Patient.Application;
@@ -8,6 +9,8 @@ using Microsoft.OpenApi.Models;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
+
+Jwt jwt = builder.Configuration.GetSection(nameof(Jwt)).Get<Jwt>();
 
 // Add services to the container.
 
@@ -48,7 +51,8 @@ builder.Services.AddAuthentication(options =>
 })
     .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
     {
-        options.Authority = "https://localhost:7038/";
+        options.Authority = jwt.Authority;
+        options.Audience = jwt.Audience;
         options.TokenValidationParameters = new TokenValidationParameters()
         {
             ValidateAudience = false
