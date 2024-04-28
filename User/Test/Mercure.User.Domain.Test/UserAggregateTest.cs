@@ -8,7 +8,7 @@ namespace Mercure.User.Domain.Test
 {
     public class UserAggregateTest
     {
-
+        [Trait("Unit Test", "Unit Test")]
         [Fact]
         public void CreateUser_BasicUser_ReturnUser()
         {
@@ -37,6 +37,7 @@ namespace Mercure.User.Domain.Test
             user.BirthDate.Should().Be(birthDate);
         }
 
+        [Trait("Unit Test", "Unit Test")]
         [Fact]
         public void AssignProfile__AssignsProfileToUser()
         {
@@ -62,6 +63,7 @@ namespace Mercure.User.Domain.Test
             user.Profiles.Should().Contain(profile);
         }
 
+        [Trait("Unit Test", "Unit Test")]
         [Fact]
         public void AssignProfile__ThrowFunctionException()
         {

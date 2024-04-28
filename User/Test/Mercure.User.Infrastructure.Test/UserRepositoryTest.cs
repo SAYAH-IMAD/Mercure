@@ -20,6 +20,7 @@ namespace Mercure.User.Infrastructure.Test
             _translatorMock = new Mock<ITranslator<UserAggregate, UserModel>>();
         }
 
+        [Trait("Unit Test", "Unit Test")]
         [Fact]
         public void Add_Always_AddUser()
         {
@@ -55,6 +56,7 @@ namespace Mercure.User.Infrastructure.Test
             _translatorMock.Verify(e => e.Translate(It.IsAny<UserModel>()));
         }
 
+        [Trait("Unit Test", "Unit Test")]
         [Fact]
         public void GetById_Always_ReturnUser()
         {
@@ -90,6 +92,7 @@ namespace Mercure.User.Infrastructure.Test
             result.Should().Be(aggregate);
         }
 
+        [Trait("Unit Test", "Unit Test")]
         [Fact]
         public void Save_Always_SaveChanges()
         {
