@@ -1,8 +1,8 @@
-﻿using Mercure.Common.Persistence;
+﻿using Mercure.Common.Persistence.Translator;
 using Mercure.User.Domain.Aggregate.Profile;
 using Mercure.User.Infrastructure.Persistence.Model;
 
-namespace Mercure.User.Infrastructure.Persistence
+namespace Mercure.User.Infrastructure.Persistence.Translator
 {
     public class ProfileTranslator : ITranslator<ProfileAggregate, ProfileModel>
     {

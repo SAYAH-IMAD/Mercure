@@ -10,6 +10,17 @@
         }
       ],
       "UpstreamPathTemplate": "/User/{Version}/{Url}"
+    },
+    {
+      "DownstreamPathTemplate": "/API/Patient/{Version}/{Url}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7194
+        }
+      ],
+      "UpstreamPathTemplate": "/Patient/{Version}/{Url}"
     }
   ]
 }

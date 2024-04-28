@@ -1,4 +1,7 @@
-﻿namespace Mercure.Common.Persistence
+﻿using ChangeTracking;
+using System.ComponentModel;
+
+namespace Mercure.Common.Persistence.Model
 {
     public abstract class EntityDB<T> : IEntityDB where T : EntityDB<T>
     {

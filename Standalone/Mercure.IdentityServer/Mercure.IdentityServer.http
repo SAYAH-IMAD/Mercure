@@ -1,0 +1,6 @@
+@Mercure.IdentityServer_HostAddress = http://localhost:5121
+
+GET {{Mercure.IdentityServer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -11,5 +11,7 @@ namespace Mercure.User.Domain.Enumerations
             : base(code, value)
         {
         }
+
+        public static implicit operator string(UserStateEnumeration value) => value.Code;
     }
 }

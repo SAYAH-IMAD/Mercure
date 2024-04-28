@@ -1,8 +1,8 @@
-﻿namespace Mercure.User.Application.Commands
+﻿namespace Mercure.User.Application.Commands.Models
 {
     public class UserProfileCommandModel
     {
         public long UserId { get; set; }
-        public string Title { get; set; }
+        public long ProfileId { get; set; }
     }
 }

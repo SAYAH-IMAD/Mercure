@@ -1,34 +1,41 @@
 ﻿using MediatR;
-using Mercure.User.Domain.Aggregate.User;
-using Mercure.User.Domain.Exceptions;
-using Mercure.User.Infrastructure.Persistence;
+using Mercure.Common.Persistence.DataReader;
+using Mercure.User.Application.Queries.Models;
+using Mercure.User.Application.Queries.SQL;
 
 namespace Mercure.User.Application.Queries
 {
-    public class UserQueryHandler : IRequestHandler<GetUserQuery, UserQueryModel>
+    public class UserQueryHandler : IRequestHandler<GetUserQuery, UserQueryModel>,
+                                    IRequestHandler<RegisterUserQuery, RegisterUserQueryModel>,
+                                    IRequestHandler<GetUsersQuery, IEnumerable<UserQueryModel>>
     {
-        readonly IUserRepository _userRepository;
+        readonly IAccessDB _access;
 
-        public UserQueryHandler(IUserRepository userRepository)
+        public UserQueryHandler(IAccessDB access)
         {
-            _userRepository = userRepository;
+            _access = access;
         }
 
         public async Task<UserQueryModel> Handle(GetUserQuery request, CancellationToken cancellationToken)
         {
-            UserAggregate aggregate = _userRepository.GetById(request.Id);
-
-            if (aggregate == null)
-                throw new AggregatNullException(nameof(UserAggregate), request.Id);
-
-            return new()
+            return _access.ReadFirst<UserQueryModel>(UserSQL.GetUserById, new Dictionary<string, object>()
             {
-                Id = aggregate.Identifier.Value,
-                LastName = aggregate.LastName,
-                FirstName = aggregate.FirstName,
-                Address = aggregate.Address,
-                BirthDate = aggregate.BirthDate,
-            };
+                { "@ID", request.Id}
+            });
+        }
+
+        public async Task<IEnumerable<UserQueryModel>> Handle(GetUsersQuery request, CancellationToken cancellationToken)
+        {
+            return _access.Read<UserQueryModel>(UserSQL.GetUsers, new Dictionary<string, object>() { });
+        }
+
+        public async Task<RegisterUserQueryModel> Handle(RegisterUserQuery request, CancellationToken cancellationToken)
+        {
+            return _access.ReadFirst<RegisterUserQueryModel>(UserSQL.GetUserByEmail, new Dictionary<string, object>()
+            {
+                { "@EMAIL", request.Email},
+                { "@PASSWORD", request.Password}
+            });
         }
     }
 }

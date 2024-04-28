@@ -36,9 +36,10 @@ C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\Mercure.API\obj\Debug\net7.0\stat
 C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\Mercure.API\obj\Debug\net7.0\staticwebassets.build.json
 C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\Mercure.API\obj\Debug\net7.0\staticwebassets.development.json
 C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\Mercure.API\obj\Debug\net7.0\scopedcss\bundle\Mercure.API.styles.css
-C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\Mercure.API\obj\Debug\net7.0\Mercure.API.csproj.CopyComplete
 C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\Mercure.API\obj\Debug\net7.0\Mercure.API.dll
 C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\Mercure.API\obj\Debug\net7.0\refint\Mercure.API.dll
 C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\Mercure.API\obj\Debug\net7.0\Mercure.API.pdb
 C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\Mercure.API\obj\Debug\net7.0\Mercure.API.genruntimeconfig.cache
 C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\Mercure.API\obj\Debug\net7.0\ref\Mercure.API.dll
+C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\Mercure.API\obj\Debug\net7.0\Mercure.API.sourcelink.json
+C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\Mercure.API\obj\Debug\net7.0\Mercure..4C63D45E.Up2Date

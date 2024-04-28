@@ -1,4 +1,4 @@
-﻿using Mercure.Common.Persistence;
+﻿using Mercure.Common.Persistence.Translator;
 using Mercure.User.Domain.Aggregate.Profile;
 using Mercure.User.Infrastructure.Persistence.Model;
 

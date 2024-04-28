@@ -1,20 +1,20 @@
-﻿using Mercure.Common.Persistence;
-using Mercure.User.Domain.ValueObject;
-using Mercure.User.Infrastructure.Persistence.Model;
+﻿using Mercure.Common.Persistence.Model;
 
-namespace Mercure.User.Infrastructure.Persistence
+namespace Mercure.User.Infrastructure.Persistence.Model
 {
     public class UserModel : EntityDB<UserModel>
     {
         public virtual long? Id { get; set; }
         public virtual string FirstName { get; set; }
         public virtual string LastName { get; set; }
+        public virtual string Email { get; set; }
+        public virtual string Password { get; set; }
         public virtual string Street { get; set; }
         public virtual string City { get; set; }
         public virtual string PostalCode { get; set; }
         public virtual DateTime BirthDate { get; set; }
-        public virtual List<UserStateModel> HistoryStates { get; set; }
-        public virtual List<UserProfileModel> Profiles { get; set; }
+        public virtual IList<UserStateModel> HistoryStates { get; set; }
+        public virtual IList<UserProfileModel> Profiles { get; set; }
 
         public override string Identifier => Id.ToString();
 
@@ -23,6 +23,8 @@ namespace Mercure.User.Infrastructure.Persistence
             Id = entity.Id;
             FirstName = entity.FirstName;
             LastName = entity.LastName;
+            Email = entity.Email;
+            Password = entity.Password;
             Street = entity.Street;
             City = entity.City;
             PostalCode = entity.PostalCode;
