@@ -41,7 +41,7 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Mercure.Patient.DB", "Patie
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Standalone", "Standalone", "{A5B75CF8-07D6-442C-BF32-FD5FB5BDD3E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mercure.IdentityServer", "Standalone\Mercure.IdentityServer\Mercure.IdentityServer.csproj", "{D93528D5-8624-4E21-A065-9FD2BE065507}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mercure.IdentityServer", "Standalone\Mercure.IdentityServer\Mercure.IdentityServer.csproj", "{D93528D5-8624-4E21-A065-9FD2BE065507}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -70,7 +70,6 @@ Global
 		{45698F7A-497B-40F1-AA1A-1F01C7A6120D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45698F7A-497B-40F1-AA1A-1F01C7A6120D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{74A58064-E239-4058-BED2-80263EE544D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{74A58064-E239-4058-BED2-80263EE544D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74A58064-E239-4058-BED2-80263EE544D5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{74A58064-E239-4058-BED2-80263EE544D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74A58064-E239-4058-BED2-80263EE544D5}.Release|Any CPU.Build.0 = Release|Any CPU
@@ -104,7 +103,6 @@ Global
 		{03DDE42B-6401-4A9D-8099-5E6D29F6C3D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03DDE42B-6401-4A9D-8099-5E6D29F6C3D5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{58C3BA9D-07BA-40E3-814A-C421126D0CF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{58C3BA9D-07BA-40E3-814A-C421126D0CF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58C3BA9D-07BA-40E3-814A-C421126D0CF8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{58C3BA9D-07BA-40E3-814A-C421126D0CF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58C3BA9D-07BA-40E3-814A-C421126D0CF8}.Release|Any CPU.Build.0 = Release|Any CPU

@@ -4,3 +4,7 @@ C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\User\Mercure.User.DB\bin\Debug\Me
 C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\User\Mercure.User.DB\obj\Debug\Mercure.User.DB.sqlproj.AssemblyReference.cache
 C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\User\Mercure.User.DB\obj\Debug\Mercure.User.DB.dll
 C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\User\Mercure.User.DB\obj\Debug\Mercure.User.DB.pdb
+C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\User\Mercure.User.DB\obj\Debug\Model.xml
+C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\User\Mercure.User.DB\obj\Debug\refactor.xml
+C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\User\Mercure.User.DB\obj\Debug\postdeploy.sql
+C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\User\Mercure.User.DB\obj\Debug\predeploy.sql
