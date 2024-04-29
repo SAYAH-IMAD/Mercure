@@ -12,7 +12,7 @@ builder.Services.AddControllers();
 builder.Services.AddSingleton<IUserClaimsRepository, UserClaimsRepository>();
 
 string db = builder.Configuration.GetConnectionString("UserConnectionStrings");
-builder.Services.AddSingleton<IAccessDB>(new AccessDB(db)
+builder.Services.AddSingleton<IDBContext>(new DBContext(db)
                 .ConfigureMapping());
 
 // TODO : configuration de l'authentification

@@ -6,7 +6,7 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
 {
     internal class RoleTransaction : ITransaction<RoleModel>
     {
-        public IAccessDB Access => throw new NotImplementedException();
+        public IDBContext Context => throw new NotImplementedException();
 
         public bool Delete(RoleModel persistence, params object[] parentKeys)
         {

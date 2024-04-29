@@ -7,16 +7,16 @@ namespace Mercure.User.Application.Queries.Profile
 {
     public class ProfileQueryHandler : IRequestHandler<GetProfileQuery, IEnumerable<ProfileQueryModel>>
     {
-        readonly IAccessDB _access;
+        readonly IDBContext _context;
 
-        public ProfileQueryHandler(IAccessDB access)
+        public ProfileQueryHandler(IDBContext context)
         {
-            _access = access;
+            _context = context;
         }
 
         public async Task<IEnumerable<ProfileQueryModel>> Handle(GetProfileQuery request, CancellationToken cancellationToken)
         {
-            return _access.Read<ProfileQueryModel>(ProfileSQL.GetProfile, new Dictionary<string, object>()
+            return _context.Read<ProfileQueryModel>(ProfileSQL.GetProfile, new Dictionary<string, object>()
             {
                 { "@ID", request.Id}
             });

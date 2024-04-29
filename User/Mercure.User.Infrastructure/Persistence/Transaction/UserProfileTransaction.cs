@@ -7,14 +7,14 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
 {
     public class UserProfileTransaction : ITransaction<UserProfileModel>
     {
-        readonly IAccessDB _access;
+        readonly IDBContext _context;
 
-        public UserProfileTransaction(IAccessDB accessDB)
+        public UserProfileTransaction(IDBContext context)
         {
-            _access = accessDB;
+            _context = context;
         }
 
-        public IAccessDB Access => _access;
+        public IDBContext Context => _context;
 
         public bool Delete(UserProfileModel persistence, params object[] parentKeys)
         {
@@ -23,7 +23,7 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
                 { "@ID", persistence.Id}
             };
 
-            _access.Execute(UserProfileQueries.Delete, parameters);
+            _context.Execute(UserProfileQueries.Delete, parameters);
 
             return true;
         }
@@ -35,7 +35,7 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
                 { "@ID", identifier}
             };
 
-            var result = _access.ReadFirst<UserProfileModel>(UserProfileQueries.GetById, parameters);
+            var result = _context.ReadFirst<UserProfileModel>(UserProfileQueries.GetById, parameters);
 
             return result;
         }
@@ -49,7 +49,7 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
                 { "@USER_ID",userId},
             };
 
-            var result = _access.Read<UserProfileModel>(UserProfileQueries.GetByParentKey, parameters).ToList();
+            var result = _context.Read<UserProfileModel>(UserProfileQueries.GetByParentKey, parameters).ToList();
 
             return result;
         }
@@ -57,7 +57,7 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
         public bool Insert(UserProfileModel persistence, params object[] parentKeys)
         {
             long? userId = parentKeys[0] as long?;
-            persistence.Id = _access.GetSequence("USER_PROFILE_ID");
+            persistence.Id = _context.GetSequence("USER_PROFILE_ID");
 
             Dictionary<string, object> parameters = new()
             {
@@ -67,7 +67,7 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
                 { "@USER_ID",userId},
             };
 
-            _access.Execute<UserProfileModel>(UserProfileQueries.Insert, parameters);
+            _context.Execute<UserProfileModel>(UserProfileQueries.Insert, parameters);
 
             return true;
         }

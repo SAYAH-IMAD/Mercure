@@ -6,7 +6,7 @@ namespace Mercure.Common.Persistence.Transactions
     public abstract class Transaction<TPersistence> : ITransaction<TPersistence>
         where TPersistence : EntityDB<TPersistence>
     {
-        public abstract IAccessDB Access { get; }
+        public abstract IDBContext Context { get; }
 
         public abstract bool Delete(TPersistence persistence, params object[] parentKeys);
 

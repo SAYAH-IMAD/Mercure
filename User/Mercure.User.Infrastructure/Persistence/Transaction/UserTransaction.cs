@@ -11,16 +11,16 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
         readonly ITransaction<UserStateModel> UserStateTransaction;
         readonly ITransaction<UserProfileModel> UserProfileTransaction;
 
-        public UserTransaction(IAccessDB access,
+        public UserTransaction(IDBContext access,
             ITransaction<UserStateModel> userStateTransaction,
             ITransaction<UserProfileModel> userProfileTransaction)
         {
-            Access = access;
+            Context = access;
             UserStateTransaction = userStateTransaction;
             UserProfileTransaction = userProfileTransaction;
         }
 
-        public IAccessDB Access { get; private set; }
+        public IDBContext Context { get; private set; }
 
 
         public bool Delete(UserModel persistence, params object[] parentKeys)
@@ -35,7 +35,7 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
                 { "@ID", identifier}
             };
 
-            var result = Access.ReadFirst<UserModel>(UserQueries.Get, parameters);
+            var result = Context.ReadFirst<UserModel>(UserQueries.Get, parameters);
 
             result.HistoryStates = UserStateTransaction.GetByParentKey(result.Id);
             result.Profiles = UserProfileTransaction.GetByParentKey(result.Id);
@@ -50,7 +50,7 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
 
         public bool Insert(UserModel persistence, params object[] parentKeys)
         {
-            persistence.Id = Access.GetSequence("USER_ID");
+            persistence.Id = Context.GetSequence("USER_ID");
 
             Dictionary<string, object> parameters = new()
             {
@@ -65,7 +65,7 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
                 { "@BIRTH_DATE",persistence.BirthDate},
             };
 
-            Access.Execute<UserModel>(UserQueries.Insert, parameters);
+            Context.Execute<UserModel>(UserQueries.Insert, parameters);
 
             foreach (var historyState in persistence.HistoryStates)
             {
@@ -95,7 +95,7 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
                 { "@BIRTH_DATE",persistence.BirthDate},
             };
 
-            Access.Execute<UserModel>(UserQueries.Update, parameters);
+            Context.Execute<UserModel>(UserQueries.Update, parameters);
 
 
             foreach (var historyState in persistence.HistoryStates)
