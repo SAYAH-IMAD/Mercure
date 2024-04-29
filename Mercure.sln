@@ -45,6 +45,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mercure.IdentityServer", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mercure.User.Application.Test", "User\Test\Mercure.User.Application.Test\Mercure.User.Application.Test.csproj", "{4EBB8A83-A191-4CCF-AD78-03317FD03575}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mercure.User.API.Test", "User\Test\Mercure.User.API.Test\Mercure.User.API.Test.csproj", "{F1303CA8-0711-470A-BA5A-FEA4FF437FC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{4EBB8A83-A191-4CCF-AD78-03317FD03575}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4EBB8A83-A191-4CCF-AD78-03317FD03575}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4EBB8A83-A191-4CCF-AD78-03317FD03575}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1303CA8-0711-470A-BA5A-FEA4FF437FC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1303CA8-0711-470A-BA5A-FEA4FF437FC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1303CA8-0711-470A-BA5A-FEA4FF437FC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1303CA8-0711-470A-BA5A-FEA4FF437FC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -138,6 +144,7 @@ Global
 		{58C3BA9D-07BA-40E3-814A-C421126D0CF8} = {DC3EEDE6-40C6-4746-96CB-F4CF7BA872DC}
 		{D93528D5-8624-4E21-A065-9FD2BE065507} = {A5B75CF8-07D6-442C-BF32-FD5FB5BDD3E0}
 		{4EBB8A83-A191-4CCF-AD78-03317FD03575} = {28AD8694-A3D0-4BF3-A3BE-3AE5F8BC7BEE}
+		{F1303CA8-0711-470A-BA5A-FEA4FF437FC3} = {28AD8694-A3D0-4BF3-A3BE-3AE5F8BC7BEE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F96A38EA-AEA6-4C6D-A528-6FC62888EB32}
