@@ -7,11 +7,11 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
 {
     public class ProfileTransaction : ITransaction<ProfileModel>
     {
-        public IAccessDB Access { get; private set; }
+        public IDBContext Context { get; private set; }
 
-        public ProfileTransaction(IAccessDB access)
+        public ProfileTransaction(IDBContext context)
         {
-            Access = access;
+            Context = context;
         }
 
         public bool Delete(ProfileModel persistence, params object[] parentKeys)
@@ -26,7 +26,7 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
                 { "@Id", identifier}
             };
 
-            var result = Access.ReadFirst<ProfileModel>(ProfileQueries.GetById, parameters);
+            var result = Context.ReadFirst<ProfileModel>(ProfileQueries.GetById, parameters);
 
             return result;
         }
@@ -40,7 +40,7 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
                 { "@UserId",userId},
             };
 
-            var result = Access.Read<ProfileModel>(ProfileQueries.GetByParentKey, parameters).ToList();
+            var result = Context.Read<ProfileModel>(ProfileQueries.GetByParentKey, parameters).ToList();
 
             return result;
         }
@@ -48,7 +48,7 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
         public bool Insert(ProfileModel persistence, params object[] parentKeys)
         {
             long? userId = parentKeys[0] as long?;
-            persistence.Id = Access.GetSequence("PROFILE_ID");
+            persistence.Id = Context.GetSequence("PROFILE_ID");
 
             Dictionary<string, object> parameters = new()
             {
@@ -57,7 +57,7 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
                 { "@UserId",userId},
             };
 
-            Access.Execute<ProfileModel>(ProfileQueries.Insert, parameters);
+            Context.Execute<ProfileModel>(ProfileQueries.Insert, parameters);
 
             return true;
         }
@@ -72,7 +72,7 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
                 { "@Title",persistence.Title},
             };
 
-            Access.Execute<ProfileModel>(ProfileQueries.Update, parameters);
+            Context.Execute<ProfileModel>(ProfileQueries.Update, parameters);
 
             return true;
         }

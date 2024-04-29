@@ -18,7 +18,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
-builder.Services.AddAuthorizatinHeaderPropagation();
+builder.Services.AddDefaultHeaderPropagation();
 
 builder.Services.AddSwaggerGen(options =>
 {
@@ -42,7 +42,7 @@ builder.Services.AddApplication();
 builder.Services.AddInfrastructure();
 
 builder.Services.AddHttpClient<IPatientProxy, PatientProxy>((configuration) => { configuration.BaseAddress = new Uri("https://localhost:7021/"); })
-                .AddAuthorizatinHeaderPropagation();
+                .AddHeaderPropagation();
 
 builder.Services.AddAuthentication(options =>
 {

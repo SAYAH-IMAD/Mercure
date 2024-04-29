@@ -2,7 +2,7 @@
 
 namespace Mercure.Common.Persistence.DataReader
 {
-    public interface IAccessDB
+    public interface IDBContext
     {
         long GetSequence(string query);
         void Execute<T>(string query, Dictionary<string, object> parameters);

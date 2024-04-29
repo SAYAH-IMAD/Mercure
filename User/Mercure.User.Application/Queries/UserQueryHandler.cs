@@ -9,16 +9,16 @@ namespace Mercure.User.Application.Queries
                                     IRequestHandler<RegisterUserQuery, RegisterUserQueryModel>,
                                     IRequestHandler<GetUsersQuery, IEnumerable<UserQueryModel>>
     {
-        readonly IAccessDB _access;
+        readonly IDBContext _context;
 
-        public UserQueryHandler(IAccessDB access)
+        public UserQueryHandler(IDBContext context)
         {
-            _access = access;
+            _context = context;
         }
 
         public async Task<UserQueryModel> Handle(GetUserQuery request, CancellationToken cancellationToken)
         {
-            return _access.ReadFirst<UserQueryModel>(UserSQL.GetUserById, new Dictionary<string, object>()
+            return _context.ReadFirst<UserQueryModel>(UserSQL.GetUserById, new Dictionary<string, object>()
             {
                 { "@ID", request.Id}
             });
@@ -26,12 +26,12 @@ namespace Mercure.User.Application.Queries
 
         public async Task<IEnumerable<UserQueryModel>> Handle(GetUsersQuery request, CancellationToken cancellationToken)
         {
-            return _access.Read<UserQueryModel>(UserSQL.GetUsers, new Dictionary<string, object>() { });
+            return _context.Read<UserQueryModel>(UserSQL.GetUsers, new Dictionary<string, object>() { });
         }
 
         public async Task<RegisterUserQueryModel> Handle(RegisterUserQuery request, CancellationToken cancellationToken)
         {
-            return _access.ReadFirst<RegisterUserQueryModel>(UserSQL.GetUserByEmail, new Dictionary<string, object>()
+            return _context.ReadFirst<RegisterUserQueryModel>(UserSQL.GetUserByEmail, new Dictionary<string, object>()
             {
                 { "@EMAIL", request.Email},
                 { "@PASSWORD", request.Password}

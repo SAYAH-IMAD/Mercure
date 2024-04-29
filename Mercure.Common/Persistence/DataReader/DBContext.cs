@@ -4,16 +4,16 @@ using static Dapper.SqlMapper;
 
 namespace Mercure.Common.Persistence.DataReader
 {
-    public class AccessDB : IAccessDB
+    public class DBContext : IDBContext
     {
         readonly string _connection;
 
-        public AccessDB(string connection)
+        public DBContext(string connection)
         {
             _connection = connection;
         }
 
-        public AccessDB ConfigureMapping()
+        public DBContext ConfigureMapping()
         {
             DefaultTypeMap.MatchNamesWithUnderscores = true;
 

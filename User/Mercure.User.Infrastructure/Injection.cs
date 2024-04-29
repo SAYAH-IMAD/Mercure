@@ -17,7 +17,7 @@ namespace Mercure.User.Infrastructure
         public static void AddInfrastructure(this IServiceCollection services)
         {
             services.AddSingleton<IUserRepository, UserRepository>();
-            services.AddSingleton<IAccessDB>(new AccessDB("Data Source=localhost;Initial Catalog=UserManagement;Integrated Security=True;Encrypt=False")
+            services.AddSingleton<IDBContext>(new DBContext("Data Source=localhost;Initial Catalog=UserManagement;Integrated Security=True;Encrypt=False")
                 .ConfigureMapping());
           
             services.AddSingleton<ITransaction<ProfileModel>, ProfileTransaction>();
