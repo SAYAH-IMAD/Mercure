@@ -3,7 +3,7 @@ using Mercure.Patient.Domain.ValueObject;
 
 namespace Mercure.Patient.Domain.Aggregate
 {
-    internal class PatientAggregate : AggregateRoot
+    public class PatientAggregate : AggregateRoot
     {
         private PatientAggregate(long? id,
             string lastName,

@@ -2,7 +2,7 @@
 
 namespace Mercure.Patient.Domain.Aggregate
 {
-    internal class Consultation : IEntity
+    public class Consultation : IEntity
     {
         private Consultation(long? identifier, 
             DateTime date)

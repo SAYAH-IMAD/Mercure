@@ -13,8 +13,6 @@ namespace Mercure.User.API.Controllers
     [Route("API/User/V1")]
     public class UserController : ControllerBasic
     {
-        readonly IPatientProxy _proxy;
-
         public UserController(IMediator mediator)
             : base(mediator)
         {
