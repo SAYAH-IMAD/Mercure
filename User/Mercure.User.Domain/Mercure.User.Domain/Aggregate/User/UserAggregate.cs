@@ -64,5 +64,20 @@ namespace Mercure.User.Domain.Aggregate.User
         {
             HistoryStates.Add(UserState.Create(state, date));
         }
+
+        public void UpdateAddress(Address address) 
+        { 
+            Address = address;
+        }
+
+        public void UpdateEmail(Email email)
+        { 
+            Email = email;
+        }
+
+        public void UpdatePassword(Password password)
+        { 
+            Password = password;
+        }
     }
 }

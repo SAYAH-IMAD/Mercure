@@ -37,5 +37,10 @@ namespace Mercure.User.API.Controllers
         [HttpPost("AssignProfile", Name = "AssignProfile")]
         public async Task AssignProfile(UserProfileCommandModel user) =>
             await Mediator.Send(new AssignProfileToUserCommand(user));
+
+        [Authorize]
+        [HttpPost("UpdateUser", Name = "UpdateUser")]
+        public async Task UpdateUser(UserCommandModel user) =>
+            await Mediator.Send(new UpdateUserCommand(user));
     }
 }
