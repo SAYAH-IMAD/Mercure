@@ -11,8 +11,6 @@ namespace Mercure.Common.Persistence.Repository
         where TAggregate : IAggregateRoot
         where TPersistence : EntityDB<TPersistence>
     {
-        private readonly Dictionary<string, TAggregate> _cache = new();
-
         public ITranslator<TAggregate, TPersistence> Translator { get; private set; }
         public ITransaction<TPersistence> Transaction { get; private set; }
 
@@ -29,29 +27,15 @@ namespace Mercure.Common.Persistence.Repository
             Transaction.Insert(persistence);
 
             aggregate = Translator.Translate(persistence);
-
-            _cache.Add($"{typeof(TAggregate)}-{aggregate.Identifier}", aggregate);
-            
         }
 
         public TAggregate GetById(long identifier)
         {
             TAggregate aggregate = default;
+            TPersistence persistence = Transaction.GetByIdentifier(identifier);
 
-            if (_cache.TryGetValue($"{typeof(TAggregate)}-{aggregate.Identifier}", out aggregate))
-            { 
-            
-            }
-            else
-            {
-                TPersistence persistence = Transaction.GetByIdentifier(identifier);
-
-                if (persistence is not null)
-                    aggregate = Translator.Translate(persistence);
-
-                _cache.Add($"{typeof(TAggregate)}-{aggregate.Identifier}", aggregate);
-
-            }
+            if (persistence is not null)
+                aggregate = Translator.Translate(persistence);
 
             return aggregate;
         }
@@ -62,12 +46,6 @@ namespace Mercure.Common.Persistence.Repository
             TPersistence updateData = Translator.Translate(aggregate);
 
             bool changeSaved = SaveChanges(persistedData, updateData);
-
-            if (changeSaved) 
-            {
-                _cache.Remove($"{typeof(TAggregate)}-{aggregate.Identifier}");
-                _cache.Add($"{typeof(TAggregate)}-{aggregate.Identifier}", aggregate);
-            }
 
             return changeSaved;
         }
