@@ -14,7 +14,6 @@ namespace Mercure.Patient.Application.Commands
                 new Address(request.Patient.Street, request.Patient.City, request.Patient.PostalCode),
                 new PhoneNumber(request.Patient.PhoneNumber),
                 new Email(request.Patient.Email));
-
         }
     }
 }

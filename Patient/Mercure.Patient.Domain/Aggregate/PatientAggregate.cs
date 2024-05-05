@@ -5,7 +5,7 @@ namespace Mercure.Patient.Domain.Aggregate
 {
     public class PatientAggregate : AggregateRoot
     {
-        private PatientAggregate(long? id,
+        public PatientAggregate(long? id,
             string lastName,
             string firstName,
             Gender gender,
