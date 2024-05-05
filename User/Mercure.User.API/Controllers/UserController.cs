@@ -13,19 +13,17 @@ namespace Mercure.User.API.Controllers
     [Route("API/User/V1")]
     public class UserController : ControllerBasic
     {
-        readonly IPatientProxy _proxy;
-
         public UserController(IMediator mediator)
             : base(mediator)
         {
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpGet("GetUsers", Name = "GetUsers")]
         public async Task<IEnumerable<UserQueryModel>> GetUsers() =>
             await Mediator.Send(new GetUsersQuery());
 
-        [Authorize]
+        //[Authorize]
         [HttpGet("GetUser", Name = "GetUser")]
         public async Task<UserQueryModel> GetUser(int id) =>
             await Mediator.Send(new GetUserQuery(id));
@@ -37,5 +35,10 @@ namespace Mercure.User.API.Controllers
         [HttpPost("AssignProfile", Name = "AssignProfile")]
         public async Task AssignProfile(UserProfileCommandModel user) =>
             await Mediator.Send(new AssignProfileToUserCommand(user));
+
+        [Authorize]
+        [HttpPost("UpdateUser", Name = "UpdateUser")]
+        public async Task UpdateUser(UserCommandModel user) =>
+            await Mediator.Send(new UpdateUserCommand(user));
     }
 }

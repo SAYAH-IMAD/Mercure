@@ -10,4 +10,12 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Mercure.Patient.Domain\Mercure.Patient.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Persistence\Query\Model\" />
+  </ItemGroup>
+
 </Project>

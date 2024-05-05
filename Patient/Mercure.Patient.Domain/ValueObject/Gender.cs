@@ -1,6 +1,6 @@
 ﻿namespace Mercure.Patient.Domain.ValueObject
 {
-    internal class Gender : IEquatable<Gender>
+    public class Gender : IEquatable<Gender>
     {
         public Gender(string value)
         {

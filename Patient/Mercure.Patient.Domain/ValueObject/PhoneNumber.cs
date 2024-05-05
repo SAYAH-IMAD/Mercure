@@ -1,6 +1,6 @@
 ﻿namespace Mercure.Patient.Domain.ValueObject
 {
-    internal class PhoneNumber : IEquatable<PhoneNumber>
+    public class PhoneNumber : IEquatable<PhoneNumber>
     {
         public PhoneNumber(string value)
         {

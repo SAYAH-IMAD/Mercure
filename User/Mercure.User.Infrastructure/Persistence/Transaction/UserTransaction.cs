@@ -11,17 +11,16 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
         readonly ITransaction<UserStateModel> UserStateTransaction;
         readonly ITransaction<UserProfileModel> UserProfileTransaction;
 
-        public UserTransaction(IDBContext access,
+        public UserTransaction(IDBContext context,
             ITransaction<UserStateModel> userStateTransaction,
             ITransaction<UserProfileModel> userProfileTransaction)
         {
-            Context = access;
+            Context = context;
             UserStateTransaction = userStateTransaction;
             UserProfileTransaction = userProfileTransaction;
         }
 
         public IDBContext Context { get; private set; }
-
 
         public bool Delete(UserModel persistence, params object[] parentKeys)
         {
