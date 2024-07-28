@@ -5,9 +5,6 @@ using Mercure.Patient.Application.Commands;
 using Mercure.Patient.Application.Commands.Model;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Kiota.Abstractions.Authentication;
-using Microsoft.Kiota.Http.HttpClientLibrary;
-using User.Client;
 
 namespace Mercure.Patient.API.Controllers
 {
