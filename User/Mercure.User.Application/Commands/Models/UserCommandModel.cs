@@ -1,4 +1,4 @@
-﻿namespace Mercure.User.Application.Commands.Models
+﻿namespace Mercure.User.Application.Commands
 {
     public class UserCommandModel
     {

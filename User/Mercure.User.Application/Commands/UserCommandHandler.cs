@@ -10,11 +10,11 @@ namespace Mercure.User.Application.Commands
         IRequestHandler<UpdateUserCommand>
 
     {
-        readonly IUserRepository _userRepository;
+        readonly IUserRepository _repository;
 
-        public UserCommandHandler(IUserRepository userRepository)
+        public UserCommandHandler(IUserRepository repository)
         {
-            _userRepository = userRepository;
+            _repository = repository;
         }
 
         public async Task Handle(CreateUserCommand request, CancellationToken cancellationToken)
@@ -26,27 +26,27 @@ namespace Mercure.User.Application.Commands
                 new Address(request.User.Street, request.User.City, request.User.PostalCode),
                 request.User.BirthDate);
 
-            _userRepository.Add(ref user);
-            _userRepository.Save(ref user);
+            _repository.Add(ref user);
+            _repository.Save(ref user);
         }
 
         public async Task Handle(AssignProfileToUserCommand request, CancellationToken cancellationToken)
         {
-            UserAggregate user = _userRepository.GetById(request.UserProfile.UserId);
+            UserAggregate user = _repository.GetById(request.UserProfile.UserId);
 
             user.AssignProfile(UserProfile.Create(request.UserProfile.ProfileId, DateTime.Now));
 
-            _userRepository.Save(ref user);
+            _repository.Save(ref user);
         }
 
         public async Task Handle(UpdateUserCommand request, CancellationToken cancellationToken)
         {
-            UserAggregate user = _userRepository.GetById(request.User.UserId);
+            UserAggregate user = _repository.GetById(request.User.UserId);
 
             user.UpdateEmail(new Email(request.User.Email));
             user.UpdateAddress(new Address(request.User.Street, request.User.City, request.User.PostalCode));
 
-            _userRepository.Save(ref user);
+            _repository.Save(ref user);
         }
     }
 }

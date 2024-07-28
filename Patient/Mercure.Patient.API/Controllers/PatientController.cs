@@ -1,7 +1,13 @@
-﻿using MediatR;
+﻿
+using MediatR;
 using Mercure.Common;
+using Mercure.Patient.Application.Commands;
+using Mercure.Patient.Application.Commands.Model;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+using User.Client;
 
 namespace Mercure.Patient.API.Controllers
 {
@@ -9,16 +15,14 @@ namespace Mercure.Patient.API.Controllers
     [Route("API/Patient/V1")]
     public class PatientController : ControllerBasic
     {
-        readonly IUserProxy _proxy;
 
-        public PatientController(IMediator mediator, IUserProxy proxy) : base(mediator)
+        public PatientController(IMediator mediator) : base(mediator)
         {
-            _proxy = proxy;
         }
 
         [Authorize]
-        [HttpGet("GetUsers", Name = "GetUsers")]
-        public async Task<string> GetUsers() =>
-       "await Mediator.Send(new GetUsersQuery())";
+        [HttpGet("CreatePatient", Name = "CreatePatient")]
+        public async Task CreatePatient(PatientCommandModel patient) =>
+            await Mediator.Send(new CreatePatientCommand(patient));
     }
 }

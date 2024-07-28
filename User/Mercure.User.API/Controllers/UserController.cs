@@ -1,7 +1,6 @@
 ﻿using MediatR;
 using Mercure.Common;
 using Mercure.User.Application.Commands;
-using Mercure.User.Application.Commands.Models;
 using Mercure.User.Application.Queries;
 using Mercure.User.Application.Queries.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -18,12 +17,10 @@ namespace Mercure.User.API.Controllers
         {
         }
 
-        //[Authorize]
         [HttpGet("GetUsers", Name = "GetUsers")]
         public async Task<IEnumerable<UserQueryModel>> GetUsers() =>
             await Mediator.Send(new GetUsersQuery());
 
-        //[Authorize]
         [HttpGet("GetUser", Name = "GetUser")]
         public async Task<UserQueryModel> GetUser(int id) =>
             await Mediator.Send(new GetUserQuery(id));

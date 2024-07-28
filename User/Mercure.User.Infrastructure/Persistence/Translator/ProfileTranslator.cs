@@ -13,9 +13,9 @@ namespace Mercure.User.Infrastructure.Persistence.Translator
             _roleTranslator = roleTranslator;
         }
         public ProfileModel Translate(ProfileAggregate aggregate)
-            => new() { Id = aggregate.Identifier, Title = aggregate.Title, HistoryRole = aggregate.HistoryRole.Select(e => _roleTranslator.Translate(e)).ToList() };
+            => new() { Id = aggregate.Identifier, Title = aggregate.Title, Roles = aggregate.Roles.Select(e => _roleTranslator.Translate(e)).ToList() };
 
         public ProfileAggregate Translate(ProfileModel persistence)
-            => new(persistence.Id, persistence.Title, persistence.HistoryRole.Select(e => _roleTranslator.Translate(e)).ToList());
+            => new(persistence.Id, persistence.Title, persistence.Roles.Select(e => _roleTranslator.Translate(e)).ToList());
     }
 }

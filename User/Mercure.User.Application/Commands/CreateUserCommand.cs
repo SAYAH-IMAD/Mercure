@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using Mercure.User.Application.Commands.Models;
 
 namespace Mercure.User.Application.Commands
 {
