@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iDkDJ1BPo1Q=",
+  "dgSpecHash": "mWzW9yDtAms=",
   "success": true,
-  "projectFilePath": "C:\\Users\\imads\\OneDrive\\Bureau\\Mercure\\Mercure\\Mercure.Common\\Mercure.Common.csproj",
+  "projectFilePath": "G:\\Source\\Mercure\\Mercure\\Mercure.Common\\Mercure.Common.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\imads\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\imads\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

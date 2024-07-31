@@ -8371,11 +8371,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\imads\\OneDrive\\Bureau\\Mercure\\Mercure\\Mercure.Common\\Mercure.Common.csproj",
+      "projectUniqueName": "G:\\Source\\Mercure\\Mercure\\Mercure.Common\\Mercure.Common.csproj",
       "projectName": "Mercure.Common",
-      "projectPath": "C:\\Users\\imads\\OneDrive\\Bureau\\Mercure\\Mercure\\Mercure.Common\\Mercure.Common.csproj",
+      "projectPath": "G:\\Source\\Mercure\\Mercure\\Mercure.Common\\Mercure.Common.csproj",
       "packagesPath": "C:\\Users\\imads\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\imads\\OneDrive\\Bureau\\Mercure\\Mercure\\Mercure.Common\\obj\\",
+      "outputPath": "G:\\Source\\Mercure\\Mercure\\Mercure.Common\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

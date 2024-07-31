@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\imads\\OneDrive\\Bureau\\Mercure\\Mercure\\User\\Mercure.User.Infrastructure\\Mercure.User.Infrastructure.csproj": {}
+    "G:\\Source\\Mercure\\Mercure\\User\\Mercure.User.Infrastructure\\Mercure.User.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\imads\\OneDrive\\Bureau\\Mercure\\Mercure\\Mercure.Common\\Mercure.Common.csproj": {
+    "G:\\Source\\Mercure\\Mercure\\Mercure.Common\\Mercure.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\imads\\OneDrive\\Bureau\\Mercure\\Mercure\\Mercure.Common\\Mercure.Common.csproj",
+        "projectUniqueName": "G:\\Source\\Mercure\\Mercure\\Mercure.Common\\Mercure.Common.csproj",
         "projectName": "Mercure.Common",
-        "projectPath": "C:\\Users\\imads\\OneDrive\\Bureau\\Mercure\\Mercure\\Mercure.Common\\Mercure.Common.csproj",
+        "projectPath": "G:\\Source\\Mercure\\Mercure\\Mercure.Common\\Mercure.Common.csproj",
         "packagesPath": "C:\\Users\\imads\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\imads\\OneDrive\\Bureau\\Mercure\\Mercure\\Mercure.Common\\obj\\",
+        "outputPath": "G:\\Source\\Mercure\\Mercure\\Mercure.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -121,14 +121,14 @@
         }
       }
     },
-    "C:\\Users\\imads\\OneDrive\\Bureau\\Mercure\\Mercure\\User\\Mercure.User.Domain\\Mercure.User.Domain\\Mercure.User.Domain.csproj": {
+    "G:\\Source\\Mercure\\Mercure\\User\\Mercure.User.Domain\\Mercure.User.Domain\\Mercure.User.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\imads\\OneDrive\\Bureau\\Mercure\\Mercure\\User\\Mercure.User.Domain\\Mercure.User.Domain\\Mercure.User.Domain.csproj",
+        "projectUniqueName": "G:\\Source\\Mercure\\Mercure\\User\\Mercure.User.Domain\\Mercure.User.Domain\\Mercure.User.Domain.csproj",
         "projectName": "Mercure.User.Domain",
-        "projectPath": "C:\\Users\\imads\\OneDrive\\Bureau\\Mercure\\Mercure\\User\\Mercure.User.Domain\\Mercure.User.Domain\\Mercure.User.Domain.csproj",
+        "projectPath": "G:\\Source\\Mercure\\Mercure\\User\\Mercure.User.Domain\\Mercure.User.Domain\\Mercure.User.Domain.csproj",
         "packagesPath": "C:\\Users\\imads\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\imads\\OneDrive\\Bureau\\Mercure\\Mercure\\User\\Mercure.User.Domain\\Mercure.User.Domain\\obj\\",
+        "outputPath": "G:\\Source\\Mercure\\Mercure\\User\\Mercure.User.Domain\\Mercure.User.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -150,8 +150,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\imads\\OneDrive\\Bureau\\Mercure\\Mercure\\Mercure.Common\\Mercure.Common.csproj": {
-                "projectPath": "C:\\Users\\imads\\OneDrive\\Bureau\\Mercure\\Mercure\\Mercure.Common\\Mercure.Common.csproj"
+              "G:\\Source\\Mercure\\Mercure\\Mercure.Common\\Mercure.Common.csproj": {
+                "projectPath": "G:\\Source\\Mercure\\Mercure\\Mercure.Common\\Mercure.Common.csproj"
               }
             }
           }
@@ -216,14 +216,14 @@
         }
       }
     },
-    "C:\\Users\\imads\\OneDrive\\Bureau\\Mercure\\Mercure\\User\\Mercure.User.Infrastructure\\Mercure.User.Infrastructure.csproj": {
+    "G:\\Source\\Mercure\\Mercure\\User\\Mercure.User.Infrastructure\\Mercure.User.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\imads\\OneDrive\\Bureau\\Mercure\\Mercure\\User\\Mercure.User.Infrastructure\\Mercure.User.Infrastructure.csproj",
+        "projectUniqueName": "G:\\Source\\Mercure\\Mercure\\User\\Mercure.User.Infrastructure\\Mercure.User.Infrastructure.csproj",
         "projectName": "Mercure.User.Infrastructure",
-        "projectPath": "C:\\Users\\imads\\OneDrive\\Bureau\\Mercure\\Mercure\\User\\Mercure.User.Infrastructure\\Mercure.User.Infrastructure.csproj",
+        "projectPath": "G:\\Source\\Mercure\\Mercure\\User\\Mercure.User.Infrastructure\\Mercure.User.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\imads\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\imads\\OneDrive\\Bureau\\Mercure\\Mercure\\User\\Mercure.User.Infrastructure\\obj\\",
+        "outputPath": "G:\\Source\\Mercure\\Mercure\\User\\Mercure.User.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -245,11 +245,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\imads\\OneDrive\\Bureau\\Mercure\\Mercure\\Mercure.Common\\Mercure.Common.csproj": {
-                "projectPath": "C:\\Users\\imads\\OneDrive\\Bureau\\Mercure\\Mercure\\Mercure.Common\\Mercure.Common.csproj"
+              "G:\\Source\\Mercure\\Mercure\\Mercure.Common\\Mercure.Common.csproj": {
+                "projectPath": "G:\\Source\\Mercure\\Mercure\\Mercure.Common\\Mercure.Common.csproj"
               },
-              "C:\\Users\\imads\\OneDrive\\Bureau\\Mercure\\Mercure\\User\\Mercure.User.Domain\\Mercure.User.Domain\\Mercure.User.Domain.csproj": {
-                "projectPath": "C:\\Users\\imads\\OneDrive\\Bureau\\Mercure\\Mercure\\User\\Mercure.User.Domain\\Mercure.User.Domain\\Mercure.User.Domain.csproj"
+              "G:\\Source\\Mercure\\Mercure\\User\\Mercure.User.Domain\\Mercure.User.Domain\\Mercure.User.Domain.csproj": {
+                "projectPath": "G:\\Source\\Mercure\\Mercure\\User\\Mercure.User.Domain\\Mercure.User.Domain\\Mercure.User.Domain.csproj"
               }
             }
           }
