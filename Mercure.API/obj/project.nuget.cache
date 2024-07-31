@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sNtL4OC/CYc=",
+  "dgSpecHash": "1zO9TF8qgrs=",
   "success": true,
-  "projectFilePath": "C:\\Users\\imads\\OneDrive\\Bureau\\Mercure\\Mercure\\Mercure.API\\Mercure.API.csproj",
+  "projectFilePath": "G:\\Source\\Mercure\\Mercure\\Mercure.API\\Mercure.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\imads\\.nuget\\packages\\fluentvalidation\\11.8.0\\fluentvalidation.11.8.0.nupkg.sha512",
     "C:\\Users\\imads\\.nuget\\packages\\ipaddressrange\\6.0.0\\ipaddressrange.6.0.0.nupkg.sha512",
@@ -30,7 +30,11 @@
     "C:\\Users\\imads\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
     "C:\\Users\\imads\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
     "C:\\Users\\imads\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
-    "C:\\Users\\imads\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.1.2\\system.identitymodel.tokens.jwt.7.1.2.nupkg.sha512"
+    "C:\\Users\\imads\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.1.2\\system.identitymodel.tokens.jwt.7.1.2.nupkg.sha512",
+    "C:\\Users\\imads\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.4\\microsoft.windowsdesktop.app.ref.8.0.4.nupkg.sha512",
+    "C:\\Users\\imads\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.4\\microsoft.netcore.app.ref.8.0.4.nupkg.sha512",
+    "C:\\Users\\imads\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.4\\microsoft.aspnetcore.app.ref.8.0.4.nupkg.sha512",
+    "C:\\Users\\imads\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.4\\microsoft.netcore.app.host.win-x64.8.0.4.nupkg.sha512"
   ],
   "logs": []
 }

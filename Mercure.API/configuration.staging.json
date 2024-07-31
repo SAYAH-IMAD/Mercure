@@ -9,18 +9,18 @@
           "Port": 7021
         }
       ],
-      "UpstreamPathTemplate": "/API/User/{Version}/{Url}"
+      "UpstreamPathTemplate": "/User/{Version}/{Url}"
     },
     {
-      "DownstreamPathTemplate": "/API/Product/{Version}/{Url}",
+      "DownstreamPathTemplate": "/API/Patient/{Version}/{Url}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 7021
+          "Port": 7194
         }
       ],
-      "UpstreamPathTemplate": "/API/Product/{Version}/{Url}"
+      "UpstreamPathTemplate": "/Patient/{Version}/{Url}"
     }
   ]
 }

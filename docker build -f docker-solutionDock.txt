@@ -1,0 +1,6 @@
+docker build -f docker-solution\Dockerfile --force-rm -t docker.solution .
+
+docker run -it --rm -p 3000:80 --name docker.solution.container docker.solution
+
+
+docker build -f "C:\Users\imads\OneDrive\Bureau\Mercure\Mercure\User\Mercure.User.API\Dockerfile" --force-rm -t mercureuserapi:dev --target base  --build-arg "BUILD_CONFIGURATION=Debug" --label "com.microsoft.created-by=visual-studio" --label "com.microsoft.visual-studio.project-name=Mercure.User.API" "C:\Users\imads\OneDrive\Bureau\Mercure\Mercure" 

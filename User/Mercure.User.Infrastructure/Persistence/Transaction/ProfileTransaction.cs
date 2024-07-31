@@ -8,10 +8,13 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
     public class ProfileTransaction : ITransaction<ProfileModel>
     {
         public IDBContext Context { get; private set; }
+        readonly ITransaction<RoleModel> RoleTransaction;
 
-        public ProfileTransaction(IDBContext context)
+        public ProfileTransaction(IDBContext context,
+            ITransaction<RoleModel> role)
         {
             Context = context;
+            RoleTransaction = role;
         }
 
         public bool Delete(ProfileModel persistence, params object[] parentKeys)
@@ -27,6 +30,8 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
             };
 
             var result = Context.ReadFirst<ProfileModel>(ProfileQueries.GetById, parameters);
+
+            result.Roles = RoleTransaction.GetByParentKey(result.Id);
 
             return result;
         }
@@ -47,14 +52,14 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
 
         public bool Insert(ProfileModel persistence, params object[] parentKeys)
         {
-            long? userId = parentKeys[0] as long?;
+            //long? userId = parentKeys[0] as long?;
             persistence.Id = Context.GetSequence("PROFILE_ID");
 
             Dictionary<string, object> parameters = new()
             {
                 { "@Id", persistence.Id},
                 { "@Title",persistence.Title},
-                { "@UserId",userId},
+                //{ "@UserId",userId},
             };
 
             Context.Execute<ProfileModel>(ProfileQueries.Insert, parameters);

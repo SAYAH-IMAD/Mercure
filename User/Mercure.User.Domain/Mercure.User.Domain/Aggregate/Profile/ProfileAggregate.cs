@@ -3,25 +3,26 @@ using Mercure.User.Domain.Enumerations;
 
 namespace Mercure.User.Domain.Aggregate.Profile
 {
-    public class ProfileAggregate : IEntity
+    public class ProfileAggregate : AggregateRoot
     {
-        public ProfileAggregate(long? identifier, string title, List<Role> historyRole)
+        public ProfileAggregate(long? id, 
+            string title, 
+            List<Role> roles)
+            :base(id)
         {
-            Identifier = identifier;
             Title = title;
-            HistoryRole = historyRole;
+            Roles = roles;
         }
 
-        public long? Identifier { get; set; }
         public string Title { get; private set; }
-        public ICollection<Role> HistoryRole { get; private set; }
+        public ICollection<Role> Roles { get; private set; }
 
         public static ProfileAggregate Create(string title) => new
             (null, title, new List<Role>());
 
         public void AssignRole(RoleEnumeration role, DateTime date)
         {
-            HistoryRole.Add(Role.Create(role, date));
+            Roles.Add(Role.Create(role, date));
         }
     }
 }

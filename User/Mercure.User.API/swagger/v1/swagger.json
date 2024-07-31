@@ -5,6 +5,38 @@
     "version": "v1"
   },
   "paths": {
+    "/API/User/V1/CreateProfile": {
+      "post": {
+        "tags": [
+          "Profile"
+        ],
+        "operationId": "CreateProfile",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProfileCommandModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProfileCommandModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProfileCommandModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/API/User/V1/GetUsers": {
       "get": {
         "tags": [
@@ -184,6 +216,16 @@
   },
   "components": {
     "schemas": {
+      "ProfileCommandModel": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "UserCommandModel": {
         "type": "object",
         "properties": {

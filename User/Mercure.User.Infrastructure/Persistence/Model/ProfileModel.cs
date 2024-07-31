@@ -6,7 +6,7 @@ namespace Mercure.User.Infrastructure.Persistence.Model
     {
         public virtual long? Id { get; set; }
         public virtual string Title { get; set; }
-        public virtual List<RoleModel> HistoryRole { get; set; }
+        public virtual  IList<RoleModel> Roles { get; set; }
 
         public override string Identifier => Id.ToString();
 
@@ -15,7 +15,7 @@ namespace Mercure.User.Infrastructure.Persistence.Model
             Id = entity.Id;
             Title = entity.Title;
 
-            SynchroniseRelation(HistoryRole, entity.HistoryRole);
+            SynchroniseRelation(Roles, entity.Roles);
         }
     }
 }

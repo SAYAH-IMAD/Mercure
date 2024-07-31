@@ -43,9 +43,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Standalone", "Standalone", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mercure.IdentityServer", "Standalone\Mercure.IdentityServer\Mercure.IdentityServer.csproj", "{D93528D5-8624-4E21-A065-9FD2BE065507}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mercure.User.Application.Test", "User\Test\Mercure.User.Application.Test\Mercure.User.Application.Test.csproj", "{4EBB8A83-A191-4CCF-AD78-03317FD03575}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mercure.User.Application.Test", "User\Test\Mercure.User.Application.Test\Mercure.User.Application.Test.csproj", "{4EBB8A83-A191-4CCF-AD78-03317FD03575}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mercure.User.API.Test", "User\Test\Mercure.User.API.Test\Mercure.User.API.Test.csproj", "{F1303CA8-0711-470A-BA5A-FEA4FF437FC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mercure.User.API.Test", "User\Test\Mercure.User.API.Test\Mercure.User.API.Test.csproj", "{F1303CA8-0711-470A-BA5A-FEA4FF437FC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mercure.Patient.API.Test", "Patient\Test\Mercure.Patient.API.Test\Mercure.Patient.API.Test.csproj", "{E0F89467-1C2C-4D45-8EAF-896D33CE6D43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mercure.Patient.Domain.Test", "Patient\Test\Mercure.Patient.Domain.Test\Mercure.Patient.Domain.Test.csproj", "{7A21F86D-37D3-4FAC-A24F-3B01861223FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mercure.Patient.Infrastructure.Test", "Patient\Test\Mercure.Patient.Infrastructure.Test\Mercure.Patient.Infrastructure.Test.csproj", "{E18D4171-48E0-4536-AF8B-E33B5C5112E0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mercure.Patient.Application.Test", "Patient\Test\Mercure.Patient.Application.Test\Mercure.Patient.Application.Test.csproj", "{2DA71173-B07D-48AC-BD33-917F6F5CCD89}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -123,6 +131,22 @@ Global
 		{F1303CA8-0711-470A-BA5A-FEA4FF437FC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1303CA8-0711-470A-BA5A-FEA4FF437FC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1303CA8-0711-470A-BA5A-FEA4FF437FC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0F89467-1C2C-4D45-8EAF-896D33CE6D43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0F89467-1C2C-4D45-8EAF-896D33CE6D43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0F89467-1C2C-4D45-8EAF-896D33CE6D43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0F89467-1C2C-4D45-8EAF-896D33CE6D43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A21F86D-37D3-4FAC-A24F-3B01861223FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A21F86D-37D3-4FAC-A24F-3B01861223FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A21F86D-37D3-4FAC-A24F-3B01861223FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A21F86D-37D3-4FAC-A24F-3B01861223FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E18D4171-48E0-4536-AF8B-E33B5C5112E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E18D4171-48E0-4536-AF8B-E33B5C5112E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E18D4171-48E0-4536-AF8B-E33B5C5112E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E18D4171-48E0-4536-AF8B-E33B5C5112E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DA71173-B07D-48AC-BD33-917F6F5CCD89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DA71173-B07D-48AC-BD33-917F6F5CCD89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DA71173-B07D-48AC-BD33-917F6F5CCD89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DA71173-B07D-48AC-BD33-917F6F5CCD89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -145,6 +169,10 @@ Global
 		{D93528D5-8624-4E21-A065-9FD2BE065507} = {A5B75CF8-07D6-442C-BF32-FD5FB5BDD3E0}
 		{4EBB8A83-A191-4CCF-AD78-03317FD03575} = {28AD8694-A3D0-4BF3-A3BE-3AE5F8BC7BEE}
 		{F1303CA8-0711-470A-BA5A-FEA4FF437FC3} = {28AD8694-A3D0-4BF3-A3BE-3AE5F8BC7BEE}
+		{E0F89467-1C2C-4D45-8EAF-896D33CE6D43} = {F4BB3A47-8153-4367-8B11-CA406DCBCCCB}
+		{7A21F86D-37D3-4FAC-A24F-3B01861223FA} = {F4BB3A47-8153-4367-8B11-CA406DCBCCCB}
+		{E18D4171-48E0-4536-AF8B-E33B5C5112E0} = {F4BB3A47-8153-4367-8B11-CA406DCBCCCB}
+		{2DA71173-B07D-48AC-BD33-917F6F5CCD89} = {F4BB3A47-8153-4367-8B11-CA406DCBCCCB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F96A38EA-AEA6-4C6D-A528-6FC62888EB32}
