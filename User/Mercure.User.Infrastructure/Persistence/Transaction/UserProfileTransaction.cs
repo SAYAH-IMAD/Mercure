@@ -56,7 +56,8 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
 
         public bool Insert(UserProfileModel persistence, params object[] parentKeys)
         {
-            long? userId = parentKeys[0] as long?;
+            long? id = parentKeys[0] as long?;
+
             persistence.Id = _context.GetSequence("USER_PROFILE_ID");
 
             Dictionary<string, object> parameters = new()
@@ -64,7 +65,7 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
                 { "@ID", persistence.Id},
                 { "@CREATION_DATE",persistence.CreationDate},
                 { "@PROFILE_ID",persistence.ProfileId},
-                { "@USER_ID",userId},
+                { "@USER_ID",id},
             };
 
             _context.Execute<UserProfileModel>(UserProfileQueries.Insert, parameters);

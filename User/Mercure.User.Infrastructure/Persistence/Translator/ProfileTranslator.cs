@@ -4,7 +4,7 @@ using Mercure.User.Infrastructure.Persistence.Model;
 
 namespace Mercure.User.Infrastructure.Persistence.Translator
 {
-    public class ProfileTranslator : ITranslator<ProfileAggregate, ProfileModel>
+    internal class ProfileTranslator : ITranslator<ProfileAggregate, ProfileModel>
     {
         readonly ITranslator<Role, RoleModel> _roleTranslator;
 

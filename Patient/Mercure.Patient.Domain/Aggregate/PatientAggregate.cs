@@ -38,10 +38,27 @@ namespace Mercure.Patient.Domain.Aggregate
             PhoneNumber phoneNumber,
             Email email) => new(null, lastName, firstName, gender, address, phoneNumber, email, new List<Consultation>());
 
+        public void Update(string lastName,
+            string firstName,
+            Gender gender,
+            Address address,
+            PhoneNumber phoneNumber,
+            Email email)
+        {
+            LastName = lastName;
+            FirstName = firstName;
+            Gender = gender;
+            Address = address;
+            PhoneNumber = phoneNumber;
+            Email = email;
+        }
+
         public void AddConsultation(Consultation consultation) 
         {
             if (consultation is not null)
                 Consultations.Add(consultation);
         }
+
+
     }
 }

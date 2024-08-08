@@ -3,7 +3,7 @@ using Mercure.Patient.Domain.Aggregate;
 
 namespace Mercure.Patient.Infrastructure.Persistence.Repository
 {
-    internal interface IPatientRepository : IRepository<PatientAggregate>
+    public interface IPatientRepository : IRepository<PatientAggregate>
     {
     }
 }

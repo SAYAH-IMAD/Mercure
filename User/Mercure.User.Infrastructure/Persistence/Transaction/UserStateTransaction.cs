@@ -42,11 +42,11 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
 
         public List<UserStateModel> GetByParentKey(params object[] parentKeys)
         {
-            long? userId = parentKeys[0] as long?;
+            long? id = parentKeys[0] as long?;
 
             Dictionary<string, object> parameters = new()
             {
-                { "@USER_ID",userId},
+                { "@USER_ID",id},
             };
 
             var result = _context.Read<UserStateModel>(UserStateQueries.GetByParentKey, parameters).ToList();
@@ -56,7 +56,8 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
 
         public bool Insert(UserStateModel persistence, params object[] parentKeys)
         {
-            long? userId = parentKeys[0] as long?;
+            long? id = parentKeys[0] as long?;
+
             persistence.Id = _context.GetSequence("USER_STATE_ID");
 
             Dictionary<string, object> parameters = new()
@@ -64,7 +65,7 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
                 { "@ID", persistence.Id},
                 { "@CREATION_DATE",persistence.CreationDate},
                 { "@CODE",persistence.Code.Code},
-                { "@USER_ID",userId},
+                { "@USER_ID",id},
             };
 
             _context.Execute<UserStateModel>(UserStateQueries.Insert, parameters);

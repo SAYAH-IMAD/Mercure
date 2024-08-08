@@ -38,11 +38,11 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
 
         public List<ProfileModel> GetByParentKey(params object[] parentKeys)
         {
-            long? userId = parentKeys[0] as long?;
+            long? id = parentKeys[0] as long?;
 
             Dictionary<string, object> parameters = new()
             {
-                { "@UserId",userId},
+                { "@UserId",id},
             };
 
             var result = Context.Read<ProfileModel>(ProfileQueries.GetByParentKey, parameters).ToList();
@@ -52,14 +52,12 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
 
         public bool Insert(ProfileModel persistence, params object[] parentKeys)
         {
-            //long? userId = parentKeys[0] as long?;
             persistence.Id = Context.GetSequence("PROFILE_ID");
 
             Dictionary<string, object> parameters = new()
             {
                 { "@Id", persistence.Id},
                 { "@Title",persistence.Title},
-                //{ "@UserId",userId},
             };
 
             Context.Execute<ProfileModel>(ProfileQueries.Insert, parameters);
@@ -69,11 +67,9 @@ namespace Mercure.User.Infrastructure.Persistence.Transaction
 
         public bool Update(ProfileModel persistence, params object[] parentKeys)
         {
-            long? userId = parentKeys[0] as long?;
-
             Dictionary<string, object> parameters = new()
             {
-                { "@Id",persistence.Id.Value},
+                { "@Id",persistence.Id},
                 { "@Title",persistence.Title},
             };
 

@@ -6,7 +6,7 @@ using Mercure.User.Infrastructure.Persistence.Model;
 
 namespace Mercure.User.Infrastructure.Persistence.Translator
 {
-    public class UserTranslator : ITranslator<UserAggregate, UserModel>
+    internal class UserTranslator : ITranslator<UserAggregate, UserModel>
     {
         readonly ITranslator<ProfileAggregate, ProfileModel> _profileTranslator;
         readonly ITranslator<UserProfile, UserProfileModel> _userProfileTranslator;
